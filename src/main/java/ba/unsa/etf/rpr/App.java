@@ -1,13 +1,22 @@
 package ba.unsa.etf.rpr;
 
-/**
- * Hello world!
- *
- */
+
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        if(args.length != 1){
+            System.out.println("Potreban je tacno jedan argument");
+        }else{
+            try{
+                double broj = Double.parseDouble(args[0]);
+
+                System.out.println("sinus(" + broj + ")= " + Math.sin(broj));
+                System.out.println("faktorijel(" + (int)broj + ")= " + Math.faktorijel((int)broj));
+
+            }catch (Exception e){
+                System.err.println("Nevalidan argument, mora biti broj!");
+            }
+        }
     }
 }
