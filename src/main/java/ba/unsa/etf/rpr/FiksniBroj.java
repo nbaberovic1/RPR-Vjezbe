@@ -10,7 +10,7 @@ public class FiksniBroj extends TelefonskiBroj{
 
     public FiksniBroj(Grad grad, String broj){
         if(grad == null || broj == null || broj.length() != 7)
-            throw new IllegalArgumentException("Argumenti nisu ispravni!");
+            throw new IllegalArgumentException("Nekorektni argumenti!");
         this.grad = grad;
         this.broj = broj;
     }
