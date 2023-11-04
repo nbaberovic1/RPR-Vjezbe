@@ -28,6 +28,11 @@ public class FiksniBroj extends TelefonskiBroj{
     }
 
     @Override
+    public boolean equals(TelefonskiBroj broj) {
+        return this.ispisi().equals(broj.ispisi());
+    }
+
+    @Override
     public int hashCode() {
         return Objects.hash(grad, broj);
     }
