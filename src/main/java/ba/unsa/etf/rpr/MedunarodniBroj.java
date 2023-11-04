@@ -8,9 +8,9 @@ public class MedunarodniBroj extends TelefonskiBroj{
 
     private String broj;
 
-    public MedunarodniBroj(String drzava, String broj) {
+    public MedunarodniBroj(String drzava, String broj) throws TelefonskiBrojException {
         if(drzava == null || broj == null)
-            throw new IllegalArgumentException("Nekorektni argumenti!");
+            throw new TelefonskiBrojException("Jedinstveni broj ili pozivni broj nije OK!");
         this.drzava = drzava;
         this.broj = broj;
     }

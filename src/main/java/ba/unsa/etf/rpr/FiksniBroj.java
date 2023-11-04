@@ -8,9 +8,9 @@ public class FiksniBroj extends TelefonskiBroj{
 
     private String broj;
 
-    public FiksniBroj(Grad grad, String broj){
+    public FiksniBroj(Grad grad, String broj) throws TelefonskiBrojException {
         if(grad == null || broj == null || broj.length() != 7)
-            throw new IllegalArgumentException("Nekorektni argumenti!");
+            throw new TelefonskiBrojException("Jedinstveni broj ili pozivni broj za fiksni telefon nije OK!");
         this.grad = grad;
         this.broj = broj;
     }
@@ -27,10 +27,6 @@ public class FiksniBroj extends TelefonskiBroj{
         return grad.getPozivniBroj() + '/' + broj;
     }
 
-    @Override
-    public boolean equals(TelefonskiBroj broj) {
-        return this.ispisi().equals(broj.ispisi());
-    }
 
     @Override
     public int hashCode() {

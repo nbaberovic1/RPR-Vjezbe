@@ -8,9 +8,9 @@ public class MobilniBroj extends TelefonskiBroj{
 
     private String broj;
 
-    public MobilniBroj(int mobilnaMreza, String broj){
+    public MobilniBroj(int mobilnaMreza, String broj) throws TelefonskiBrojException {
         if( mobilnaMreza < 60 || mobilnaMreza > 67 || broj == null || broj.length() != 7 )
-            throw new IllegalArgumentException("Nekorektni argumenti!");
+            throw new TelefonskiBrojException("Jedinstveni broj ili broj mobilne mreze nije OK!");
         this.mobilnaMreza = mobilnaMreza;
         this.broj = broj;
     }
