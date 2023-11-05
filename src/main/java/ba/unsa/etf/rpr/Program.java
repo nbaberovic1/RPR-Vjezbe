@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr;
 
 import java.util.Scanner;
+import java.util.Set;
 
 /**
  * Hello world!
@@ -99,6 +100,52 @@ public class Program {
             default:
         }
         return null;
+    }
+
+    private static void naSlovo() {
+        System.out.println("Unesite slovo za koje zelite da pretražite imenik: ");
+        String s = ulaz.nextLine();
+        String lista = imenik.naSlovo(s.toCharArray()[0]);
+        System.out.println(lista);
+    }
+
+    private static void izGrada() {
+        System.out.println("Unesi ime grada: ");
+        String grad = ulaz.nextLine();
+        try {
+            Grad g = Grad.valueOf(grad);
+            Set<String> imena = imenik.izGrada(g);
+            System.out.println(imena);
+        }catch (Exception e){
+            System.out.println("Pogresan grad!");
+        }
+    }
+
+    private static void izGradaBrojevi() {
+        System.out.println("Unesite ime grada: ");
+        String grad = ulaz.nextLine();
+        try{
+            Grad g = Grad.valueOf(grad);
+            Set<TelefonskiBroj> brojevi = imenik.izGradaBrojevi(g);
+            for(TelefonskiBroj broj : brojevi){
+                System.out.println(broj.ispisi());
+            }
+        }catch (Exception e){
+            System.out.println("Pogresan grad!");
+        }
+    }
+
+    private static void dodajBroj() {
+        System.out.println("Unesite ime: ");
+        String ime = ulaz.nextLine();
+        try {
+            TelefonskiBroj broj = unesiBrojTelefona();
+            imenik.dodaj(ime, broj);
+        }catch(TelefonskiBrojException e){
+            System.out.println(e.getMessage());
+        }catch (Exception e){
+            System.out.println("Uneseni netacni podaci!");
+        }
     }
 
     private static void popuniPodatke() throws TelefonskiBrojException {
