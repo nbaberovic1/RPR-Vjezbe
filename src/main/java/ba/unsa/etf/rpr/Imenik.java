@@ -77,4 +77,16 @@ public class Imenik {
         return false;
     }
 
+    @Override
+    public String toString(){
+        StringBuilder builder = new StringBuilder();
+        int redniBroj = 1;
+        for(Map.Entry<String, TelefonskiBroj> kontakt : this.imenik.entrySet()){
+            builder.append(redniBroj).append(". ").append(kontakt.getKey()).
+                    append(" - ").append(kontakt.getValue().ispisi()).append(System.lineSeparator());
+            redniBroj = redniBroj + 1;
+        }
+        return builder.toString();
+    }
+
 }

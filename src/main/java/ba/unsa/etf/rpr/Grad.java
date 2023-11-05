@@ -16,4 +16,13 @@ public enum Grad {
     public String getPozivniBroj(){
         return pozivniBroj;
     }
+
+    public static Grad izPozivnog(String pozivni) {
+        for(Grad grad : Grad.values()){
+            if(grad.getPozivniBroj().equals(pozivni)){
+                return grad;
+            }
+        }
+        return null;
+    }
 }
