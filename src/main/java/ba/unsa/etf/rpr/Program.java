@@ -113,7 +113,7 @@ public class Program {
         System.out.println("Unesi ime grada: ");
         String grad = ulaz.nextLine();
         try {
-            Grad g = Grad.valueOf(grad);
+            Grad g = Grad.valueOf(grad.toUpperCase().trim());
             Set<String> imena = imenik.izGrada(g);
             System.out.println(imena);
         }catch (Exception e){
@@ -125,7 +125,7 @@ public class Program {
         System.out.println("Unesite ime grada: ");
         String grad = ulaz.nextLine();
         try{
-            Grad g = Grad.valueOf(grad);
+            Grad g = Grad.valueOf(grad.toUpperCase().trim());
             Set<TelefonskiBroj> brojevi = imenik.izGradaBrojevi(g);
             for(TelefonskiBroj broj : brojevi){
                 System.out.println(broj.ispisi());

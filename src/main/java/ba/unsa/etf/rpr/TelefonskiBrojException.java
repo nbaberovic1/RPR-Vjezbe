@@ -1,8 +1,14 @@
 package ba.unsa.etf.rpr;
 
-public class TelefonskiBrojException extends Exception{
-
-    public TelefonskiBrojException(String poruka){
-        super(poruka);
+/**
+ * izuzetak TelefonskiBrojException naslijeden iz RuntimeException
+ */
+public class TelefonskiBrojException extends RuntimeException{
+    /**
+     * komstruktor izuzetka klase TelefonskiBrojException
+     * @param msg poruka za detaljniji opis razloga bacanja izuzetka
+     */
+    public TelefonskiBrojException(String msg){
+        super(msg);
     }
 }
