@@ -72,5 +72,28 @@ public class ImenikTest {
         assertTrue(imena.isEmpty());
     }
 
+    // -------------- Mocking testovi ----------------------
+
+    @Test
+    public void testMockExternal(){
+        Imenik i = Mockito.mock(Imenik.class);
+        Mockito.when(i.dajBroj("Dino")).thenReturn("Nema trazenog broja!");
+
+        String trazeno = i.dajBroj("Dino");
+        assertEquals( "Nema trazenog broja!", trazeno);
+    }
+
+    @Test
+    public void testMockInternal(){
+        //podesavanje mocita
+        Map<String, TelefonskiBroj> mapa = Mockito.mock(Map.class);
+        Mockito.when(mapa.get("Amir")).thenReturn(new MobilniBroj(62, "999-999"));
+        imenik.setImenik(mapa);
+
+        //testiranje
+        String broj = imenik.dajBroj("Amir");
+        assertNotEquals(broj, "061/225-885");
+        assertEquals(broj, "062/999-999");
+    }
 
 }
