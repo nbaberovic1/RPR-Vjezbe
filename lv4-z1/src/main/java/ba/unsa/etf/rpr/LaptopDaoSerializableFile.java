@@ -8,6 +8,10 @@ public class LaptopDaoSerializableFile implements LaptopDao{
     private File file;
     private ArrayList<Laptop> laptopi;
 
+    public LaptopDaoSerializableFile(){
+        file = new File("/file.txt");
+        laptopi = new ArrayList<>();
+    }
 
     @Override
     public void dodajLaptopUListu(Laptop laptop) {
