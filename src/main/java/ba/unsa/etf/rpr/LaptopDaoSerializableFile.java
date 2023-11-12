@@ -1,6 +1,8 @@
 package ba.unsa.etf.rpr;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 public class LaptopDaoSerializableFile implements LaptopDao{
@@ -15,7 +17,7 @@ public class LaptopDaoSerializableFile implements LaptopDao{
 
     @Override
     public void dodajLaptopUListu(Laptop laptop) {
-
+        this.laptopi.add(laptop);
     }
 
     @Override
@@ -25,7 +27,18 @@ public class LaptopDaoSerializableFile implements LaptopDao{
 
     @Override
     public Laptop getLaptop(String procesor) {
-        return null;
+        for(Laptop l : laptopi){
+            if(l.getProcesor().equals(procesor)){
+                return l;
+            }
+        }
+        ArrayList<Laptop> laptopiIzDat = this.vratiPodatkeIzDatoteke();
+        for(Laptop l : laptopiIzDat){
+            if(l.getProcesor().equals(procesor)){
+                return l;
+            }
+        }
+        throw new
     }
 
     @Override
@@ -35,6 +48,19 @@ public class LaptopDaoSerializableFile implements LaptopDao{
 
     @Override
     public ArrayList<Laptop> vratiPodatkeIzDatoteke() {
-        return null;
+        ArrayList<Laptop> izDatoteke = null;
+        try{
+            FileInputStream fileInput = new FileInputStream(file);
+            ObjectInputStream in = new ObjectInputStream(fileInput);
+
+            izDatoteke = (ArrayList<Laptop>) in.readObject();
+
+            in.close();
+            fileInput.close();
+
+        }catch (Exception ex){
+            System.out.println("Neuspjesno vracanje podataka iz file-a sa porukom: " + ex.getMessage());
+        }
+        return izDatoteke;
     }
 }
