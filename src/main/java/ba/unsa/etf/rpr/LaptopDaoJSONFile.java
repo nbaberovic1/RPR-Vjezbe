@@ -31,7 +31,9 @@ public class LaptopDaoJSONFile implements LaptopDao{
 
     @Override
     public void napuniListu(ArrayList<Laptop> laptopi) {
-
+        for(Laptop l : laptopi){
+            this.laptopi.add(l);
+        }
     }
 
     @Override
