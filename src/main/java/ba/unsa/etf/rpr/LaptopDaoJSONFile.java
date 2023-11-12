@@ -39,7 +39,18 @@ public class LaptopDaoJSONFile implements LaptopDao{
 
     @Override
     public Laptop getLaptop(String procesor) {
-        return null;
+        for(Laptop l : this.laptopi){
+            if(l.getProcesor().equals(procesor)){
+                return l;
+            }
+        }
+        ArrayList<Laptop> laptopiIzDat = this.vratiPodatkeIzDatoteke();
+        for(Laptop l : laptopiIzDat){
+            if(l.getProcesor().equals(procesor)){
+                return l;
+            }
+        }
+        throw new NeodgovarajuciProcesorException("Nema laptopa sa tim procesorom!");
     }
 
     @Override
@@ -50,7 +61,7 @@ public class LaptopDaoJSONFile implements LaptopDao{
     }
 
     @Override
-    public ArrayList<Laptop> vratiPodatkeIzDatoteke() throws IOException {
+    public ArrayList<Laptop> vratiPodatkeIzDatoteke() {
         ArrayList<Laptop> izDatoteke = null;
         try{
             ObjectMapper mapper = new ObjectMapper();
