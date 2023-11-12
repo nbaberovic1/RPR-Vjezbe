@@ -1,8 +1,6 @@
 package ba.unsa.etf.rpr;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
+import java.io.*;
 import java.util.ArrayList;
 
 public class LaptopDaoSerializableFile implements LaptopDao{
@@ -22,7 +20,23 @@ public class LaptopDaoSerializableFile implements LaptopDao{
 
     @Override
     public void dodajLaptopUFile(Laptop laptop) {
+        try{
 
+            ArrayList<Laptop> listaLaptopa = this.vratiPodatkeIzDatoteke();
+            listaLaptopa.add(laptop);
+
+            FileOutputStream outFile = new FileOutputStream(file);
+            ObjectOutputStream out = new ObjectOutputStream(outFile);
+
+            out.writeObject(listaLaptopa);
+
+            out.flush();
+            out.close();
+            outFile.close();
+
+        }catch (Exception ex){
+            System.out.println("Neuspjesno dodavanje laptopa u file sa porukom: " + ex.getMessage());
+        }
     }
 
     @Override
