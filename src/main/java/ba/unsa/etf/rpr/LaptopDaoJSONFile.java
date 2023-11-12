@@ -25,7 +25,16 @@ public class LaptopDaoJSONFile implements LaptopDao{
 
     @Override
     public void dodajLaptopUFile(Laptop laptop) {
+        try{
+            ArrayList<Laptop> listaLaptopa = this.vratiPodatkeIzDatoteke();
+            listaLaptopa.add(laptop);
 
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.writeValue(file, listaLaptopa);
+
+        }catch (Exception ex){
+            System.out.println("Neuspjesno dodavanje laptopa u json file sa porukom: " + ex.getMessage());
+        }
     }
 
     @Override
