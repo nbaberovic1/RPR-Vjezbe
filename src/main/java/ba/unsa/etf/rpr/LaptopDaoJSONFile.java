@@ -1,6 +1,8 @@
 package ba.unsa.etf.rpr;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 public class LaptopDaoJSONFile implements LaptopDao{
@@ -14,7 +16,7 @@ public class LaptopDaoJSONFile implements LaptopDao{
 
     @Override
     public void dodajLaptopUListu(Laptop laptop) {
-
+        this.laptopi.add(laptop);
     }
 
     @Override
