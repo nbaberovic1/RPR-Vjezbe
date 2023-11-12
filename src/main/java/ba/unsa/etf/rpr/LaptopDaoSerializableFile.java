@@ -27,7 +27,7 @@ public class LaptopDaoSerializableFile implements LaptopDao{
 
     @Override
     public Laptop getLaptop(String procesor) {
-        for(Laptop l : laptopi){
+        for(Laptop l : this.laptopi){
             if(l.getProcesor().equals(procesor)){
                 return l;
             }
@@ -38,7 +38,7 @@ public class LaptopDaoSerializableFile implements LaptopDao{
                 return l;
             }
         }
-        throw new
+        throw new NeodgovarajuciProcesorException("Nema laptopa sa tim procesorom!");
     }
 
     @Override
