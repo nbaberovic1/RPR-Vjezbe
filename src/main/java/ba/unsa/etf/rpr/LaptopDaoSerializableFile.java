@@ -9,7 +9,7 @@ public class LaptopDaoSerializableFile implements LaptopDao{
     private ArrayList<Laptop> laptopi;
 
     public LaptopDaoSerializableFile(){
-        file = new File("/file.txt");
+        file = new File("file.txt");
         laptopi = new ArrayList<>();
     }
 
