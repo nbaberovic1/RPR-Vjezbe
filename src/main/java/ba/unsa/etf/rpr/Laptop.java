@@ -90,4 +90,11 @@ public class Laptop implements Serializable {
     public void setVelicinaEkrana(double velicinaEkrana) {
         this.velicinaEkrana = velicinaEkrana;
     }
+
+    @Override
+    public String toString(){
+        return new StringBuilder().append(brend).append(" ").append(model).append(" ").append(cijena).append(" ")
+                .append(ram).append(" ").append(hdd).append(" ").append(ssd).append(" ").append(procesor).append(" ")
+                .append(velicinaEkrana).append(" ").append(grafickaKartica).toString();
+    }
 }

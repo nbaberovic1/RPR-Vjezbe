@@ -14,7 +14,7 @@ public class LaptopDaoXMLFile implements LaptopDao{
     private ArrayList<Laptop> laptopi;
 
     public LaptopDaoXMLFile(){
-        file = new File("xml_file.xml");
+        file = new File("C:\\Users\\DT User3\\IdeaProjects\\lv4-z1\\src\\main\\java\\ba\\unsa\\etf\\rpr\\xml_file.xml");
         laptopi = new ArrayList<>();
     }
 

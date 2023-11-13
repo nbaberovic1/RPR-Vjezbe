@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr;
 
 import java.io.*;
+
 import java.util.ArrayList;
 
 public class LaptopDaoSerializableFile implements LaptopDao{
@@ -9,7 +10,18 @@ public class LaptopDaoSerializableFile implements LaptopDao{
     private ArrayList<Laptop> laptopi;
 
     public LaptopDaoSerializableFile(){
-        file = new File("file.txt");
+
+        file = new File("C:\\Users\\DT User3\\IdeaProjects\\lv4-z1\\src\\main\\java\\ba\\unsa\\etf\\rpr\\file.txt");
+        try {
+            FileWriter fwOb = new FileWriter(file, false);
+            PrintWriter pwOb = new PrintWriter(fwOb, false);
+            pwOb.flush();
+            pwOb.close();
+            fwOb.close();
+        }catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
         laptopi = new ArrayList<>();
     }
 
@@ -66,6 +78,8 @@ public class LaptopDaoSerializableFile implements LaptopDao{
     public ArrayList<Laptop> vratiPodatkeIzDatoteke() {
         ArrayList<Laptop> izDatoteke = null;
         try{
+            if(file.length() == 0) return new ArrayList<Laptop>();
+
             FileInputStream fileInput = new FileInputStream(file);
             ObjectInputStream in = new ObjectInputStream(fileInput);
 
@@ -73,7 +87,6 @@ public class LaptopDaoSerializableFile implements LaptopDao{
 
             in.close();
             fileInput.close();
-
         }catch (Exception ex){
             System.out.println("Neuspjesno vracanje podataka iz file-a sa porukom: " + ex.getMessage());
         }
