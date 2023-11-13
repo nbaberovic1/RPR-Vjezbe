@@ -1,9 +1,11 @@
 package ba.unsa.etf.rpr;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Program {
-    public static void main( String[] args ) {
+    public static void main( String[] args ){
 
         Laptop l1 = new Laptop("HP", "KingKong", 1000, 8, 1000, 500, "i7", 24, "GTX730Ti");
         Laptop l2 = new Laptop("MS", "KingKong", 800, 16, 1000, 250, "i5", 23, "GTX1080Ti");
@@ -16,12 +18,31 @@ public class Program {
         zaNapunitiListu.add(l2);
         zaNapunitiListu.add(l3);
 
-        LaptopDaoSerializableFile serializableFile = new LaptopDaoSerializableFile();
-        serializableFile.napuniListu(zaNapunitiListu);
+        System.out.println("Koju klasu zelite testirati: ");
+        Scanner ulaz = new Scanner(System.in);
+        String odabranaKlasa = ulaz.nextLine();
 
-        serializableFile.dodajLaptopUListu(l4);
+        LaptopDao klasaKojuTestiramo = null;
 
-        ArrayList<Laptop> povratIzListe = serializableFile.getLaptopi();
+        switch (odabranaKlasa){
+            case "LaptopDaoSerializableFile":
+                klasaKojuTestiramo = new LaptopDaoSerializableFile();
+                break;
+            case "LaptopDaoXMLFile":
+                klasaKojuTestiramo = new LaptopDaoXMLFile();
+                break;
+            case "LaptopDaoJSONFile":
+                klasaKojuTestiramo = new LaptopDaoJSONFile();
+                break;
+            default:
+                System.out.println("Nema takve klase!");
+        }
+
+        klasaKojuTestiramo.napuniListu(zaNapunitiListu);
+
+        klasaKojuTestiramo.dodajLaptopUListu(l4);
+
+        ArrayList<Laptop> povratIzListe = klasaKojuTestiramo.getLaptopi();
 
         for(Laptop l : povratIzListe){
             System.out.println(l);
@@ -29,14 +50,21 @@ public class Program {
 
         System.out.println("");
 
-        serializableFile.dodajLaptopUFile(l1);
-        serializableFile.dodajLaptopUFile(l3);
-        serializableFile.dodajLaptopUFile(l5);
+        klasaKojuTestiramo.dodajLaptopUFile(l1);
+        klasaKojuTestiramo.dodajLaptopUFile(l3);
+        klasaKojuTestiramo.dodajLaptopUFile(l5);
 
-        ArrayList<Laptop> povratIzDatoteke = serializableFile.vratiPodatkeIzDatoteke();
+        ArrayList<Laptop> povratIzDatoteke = klasaKojuTestiramo.vratiPodatkeIzDatoteke();
 
         for(Laptop l : povratIzDatoteke){
             System.out.println(l);
         }
+        System.out.println("");
+
+        Laptop trazeni1 = klasaKojuTestiramo.getLaptop("i5");
+        System.out.println(trazeni1);
+
+        Laptop trazeni2 = klasaKojuTestiramo.getLaptop("i9");
+        System.out.println(trazeni2);
     }
 }

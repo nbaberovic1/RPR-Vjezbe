@@ -73,6 +73,7 @@ public class LaptopDaoXMLFile implements LaptopDao{
         return izDatoteke;
     }
 
+    @Override
     public ArrayList<Laptop> getLaptopi() {
         return laptopi;
     }

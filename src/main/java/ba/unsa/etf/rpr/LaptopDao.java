@@ -8,5 +8,6 @@ public interface LaptopDao {
     void dodajLaptopUFile(Laptop laptop);
     Laptop getLaptop(String procesor);
     void napuniListu(ArrayList<Laptop> laptopi);
-    ArrayList<Laptop> vratiPodatkeIzDatoteke() throws IOException;
+    ArrayList<Laptop> vratiPodatkeIzDatoteke();
+    ArrayList<Laptop> getLaptopi();
 }
