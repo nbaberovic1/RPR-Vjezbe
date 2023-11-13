@@ -20,7 +20,7 @@ public class LaptopDaoXMLFile implements LaptopDao{
 
     @Override
     public void dodajLaptopUListu(Laptop laptop) {
-
+        this.laptopi.add(laptop);
     }
 
     @Override
@@ -39,7 +39,18 @@ public class LaptopDaoXMLFile implements LaptopDao{
 
     @Override
     public Laptop getLaptop(String procesor) {
-        return null;
+        for(Laptop l : this.laptopi){
+            if(l.getProcesor().equals(procesor)){
+                return l;
+            }
+        }
+        ArrayList<Laptop> laptopiIzDat = this.vratiPodatkeIzDatoteke();
+        for(Laptop l : laptopiIzDat){
+            if(l.getProcesor().equals(procesor)){
+                return l;
+            }
+        }
+        throw new NeodgovarajuciProcesorException("Nema laptopa sa tim procesorom!");
     }
 
     @Override
