@@ -79,4 +79,8 @@ public class LaptopDaoSerializableFile implements LaptopDao{
         }
         return izDatoteke;
     }
+
+    public ArrayList<Laptop> getLaptopi() {
+        return laptopi;
+    }
 }

@@ -72,4 +72,8 @@ public class LaptopDaoJSONFile implements LaptopDao{
         }
         return izDatoteke;
     }
+
+    public ArrayList<Laptop> getLaptopi() {
+        return laptopi;
+    }
 }

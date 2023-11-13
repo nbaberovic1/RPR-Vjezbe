@@ -72,4 +72,8 @@ public class LaptopDaoXMLFile implements LaptopDao{
         }
         return izDatoteke;
     }
+
+    public ArrayList<Laptop> getLaptopi() {
+        return laptopi;
+    }
 }
