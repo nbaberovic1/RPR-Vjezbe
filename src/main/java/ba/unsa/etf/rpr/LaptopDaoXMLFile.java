@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 import java.io.File;
@@ -24,7 +25,16 @@ public class LaptopDaoXMLFile implements LaptopDao{
 
     @Override
     public void dodajLaptopUFile(Laptop laptop) {
+        try{
+            ArrayList<Laptop> listaLaptopa = this.vratiPodatkeIzDatoteke();
+            listaLaptopa.add(laptop);
 
+            XmlMapper mapper = new XmlMapper();
+            mapper.writeValue(file, listaLaptopa);
+
+        }catch (Exception ex){
+            System.out.println("Neuspjesno dodavanje laptopa u xml file sa porukom: " + ex.getMessage());
+        }
     }
 
     @Override
