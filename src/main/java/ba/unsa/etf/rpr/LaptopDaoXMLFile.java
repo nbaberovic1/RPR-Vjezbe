@@ -1,6 +1,10 @@
 package ba.unsa.etf.rpr;
 
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 public class LaptopDaoXMLFile implements LaptopDao{
@@ -35,6 +39,14 @@ public class LaptopDaoXMLFile implements LaptopDao{
 
     @Override
     public ArrayList<Laptop> vratiPodatkeIzDatoteke() {
-        return null;
+        ArrayList<Laptop> izDatoteke = null;
+        try{
+            XmlMapper mapper = new XmlMapper();
+            izDatoteke = mapper.readValue(file, izDatoteke.getClass());
+
+        }catch (Exception ex){
+            System.out.println("Neuspjesno vracanje podataka iz xml file-a sa porukom: " + ex.getMessage());
+        }
+        return izDatoteke;
     }
 }
