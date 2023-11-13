@@ -1,20 +1,33 @@
 package ba.unsa.etf.rpr;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.ReferenceType;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
+import java.io.*;
 import java.util.ArrayList;
 
 public class LaptopDaoXMLFile implements LaptopDao{
 
     private File file;
+    @JacksonXmlElementWrapper(useWrapping = false)
     private ArrayList<Laptop> laptopi;
 
     public LaptopDaoXMLFile(){
         file = new File("C:\\Users\\DT User3\\IdeaProjects\\lv4-z1\\src\\main\\java\\ba\\unsa\\etf\\rpr\\xml_file.xml");
+
+        try {
+            FileWriter fwOb = new FileWriter(file, false);
+            PrintWriter pwOb = new PrintWriter(fwOb, false);
+            pwOb.flush();
+            pwOb.close();
+            fwOb.close();
+        }catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
         laptopi = new ArrayList<>();
     }
 
@@ -62,11 +75,13 @@ public class LaptopDaoXMLFile implements LaptopDao{
 
     @Override
     public ArrayList<Laptop> vratiPodatkeIzDatoteke() {
-        ArrayList<Laptop> izDatoteke = null;
+        ArrayList<Laptop> izDatoteke = new ArrayList<Laptop>();
         try{
-            XmlMapper mapper = new XmlMapper();
-            izDatoteke = mapper.readValue(file, izDatoteke.getClass());
+            if(file.length() != 0) {
 
+                XmlMapper mapper = new XmlMapper();
+                izDatoteke = mapper.readValue(file, new TypeReference<ArrayList<Laptop>>(){});
+            }
         }catch (Exception ex){
             System.out.println("Neuspjesno vracanje podataka iz xml file-a sa porukom: " + ex.getMessage());
         }

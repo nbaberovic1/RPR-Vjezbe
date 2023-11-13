@@ -76,17 +76,18 @@ public class LaptopDaoSerializableFile implements LaptopDao{
 
     @Override
     public ArrayList<Laptop> vratiPodatkeIzDatoteke() {
-        ArrayList<Laptop> izDatoteke = null;
+        ArrayList<Laptop> izDatoteke = new ArrayList<Laptop>();
         try{
-            if(file.length() == 0) return new ArrayList<Laptop>();
+            if(file.length() != 0) {
 
-            FileInputStream fileInput = new FileInputStream(file);
-            ObjectInputStream in = new ObjectInputStream(fileInput);
+                FileInputStream fileInput = new FileInputStream(file);
+                ObjectInputStream in = new ObjectInputStream(fileInput);
 
-            izDatoteke = (ArrayList<Laptop>) in.readObject();
+                izDatoteke = (ArrayList<Laptop>) in.readObject();
 
-            in.close();
-            fileInput.close();
+                in.close();
+                fileInput.close();
+            }
         }catch (Exception ex){
             System.out.println("Neuspjesno vracanje podataka iz file-a sa porukom: " + ex.getMessage());
         }

@@ -15,7 +15,9 @@ public class Laptop implements Serializable {
 
     private double velicinaEkrana;
 
-    public Laptop(String brend, String model, double cijena, int ram, int hdd, int ssd, String procesor, double velicinaEkrana, String grafickaKartica) {
+    public Laptop(){}
+
+    public Laptop(String brend, String model, double cijena, int ram, int hdd, int ssd, String procesor, String grafickaKartica, double velicinaEkrana) {
         this.brend = brend;
         this.model = model;
         this.cijena = cijena;
@@ -89,6 +91,14 @@ public class Laptop implements Serializable {
 
     public void setVelicinaEkrana(double velicinaEkrana) {
         this.velicinaEkrana = velicinaEkrana;
+    }
+
+    public String getGrafickaKartica() {
+        return grafickaKartica;
+    }
+
+    public void setGrafickaKartica(String grafickaKartica) {
+        this.grafickaKartica = grafickaKartica;
     }
 
     @Override
