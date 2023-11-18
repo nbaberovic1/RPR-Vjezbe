@@ -6,9 +6,11 @@ import java.util.List;
 public class KolekcijaPoruka {
     private ArrayList<String> poruke;
 
-    public<Tip> KolekcijaPoruka(List<Tip> lista){
+    public<Tip extends Predstavljiv> KolekcijaPoruka(List<Tip> lista){
         poruke = new ArrayList<String>();
-
+        for(Tip element : lista){
+            poruke.add(element.predstavi());
+        }
     }
 
     public ArrayList<String> getPoruke(){

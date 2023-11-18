@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b65f5f5e-1fa9-4062-a016-bdfdbd922d1d" name="Changes" comment="dodavanje i implementacija klase Predmet">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/KolekcijaPoruka.java" afterDir="false" />
+    <list default="true" id="b65f5f5e-1fa9-4062-a016-bdfdbd922d1d" name="Changes" comment="Dodavnje KolekcijaPoruka i interfejsa Predstavljiv">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/KolekcijaPoruka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/KolekcijaPoruka.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -105,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700297302747</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Dodavnje KolekcijaPoruka i interfejsa Predstavljiv">
+      <created>1700299113085</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700299113085</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -125,6 +133,7 @@
     <MESSAGE value="Dodavanje i implementacija klase InformacijeONastavniku" />
     <MESSAGE value="Implementacija main klase sa primjerima koristenja prije implemetiranih klasa" />
     <MESSAGE value="dodavanje i implementacija klase Predmet" />
-    <option name="LAST_COMMIT_MESSAGE" value="dodavanje i implementacija klase Predmet" />
+    <MESSAGE value="Dodavnje KolekcijaPoruka i interfejsa Predstavljiv" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodavnje KolekcijaPoruka i interfejsa Predstavljiv" />
   </component>
 </project>
