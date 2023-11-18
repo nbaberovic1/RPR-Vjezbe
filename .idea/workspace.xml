@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b65f5f5e-1fa9-4062-a016-bdfdbd922d1d" name="Changes" comment="dodavanje intefejsa SaPorukom i realizaicija druge verzije klase KolekcijaPoruka">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b65f5f5e-1fa9-4062-a016-bdfdbd922d1d" name="Changes" comment="dodavnje interfejsa MozeOcijeniti">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Osoba.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -131,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700308477233</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="dodavnje interfejsa MozeOcijeniti">
+      <created>1700309974508</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1700309974508</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -154,6 +161,7 @@
     <MESSAGE value="Dodavnje KolekcijaPoruka i interfejsa Predstavljiv" />
     <MESSAGE value="implementacija konstrukora koji prima genericku listu" />
     <MESSAGE value="dodavanje intefejsa SaPorukom i realizaicija druge verzije klase KolekcijaPoruka" />
-    <option name="LAST_COMMIT_MESSAGE" value="dodavanje intefejsa SaPorukom i realizaicija druge verzije klase KolekcijaPoruka" />
+    <MESSAGE value="dodavnje interfejsa MozeOcijeniti" />
+    <option name="LAST_COMMIT_MESSAGE" value="dodavnje interfejsa MozeOcijeniti" />
   </component>
 </project>

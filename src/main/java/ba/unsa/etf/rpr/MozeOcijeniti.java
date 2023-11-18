@@ -1,5 +1,5 @@
 package ba.unsa.etf.rpr;
 
-public class MozeOcijeniti {
+public interface MozeOcijeniti {
     Ocjena ocijeni(int x);
 }
