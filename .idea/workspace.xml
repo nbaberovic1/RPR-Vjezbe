@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b65f5f5e-1fa9-4062-a016-bdfdbd922d1d" name="Changes" comment="implementacija konstrukora koji prima genericku listu">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/SaPorukom.java" afterDir="false" />
+    <list default="true" id="b65f5f5e-1fa9-4062-a016-bdfdbd922d1d" name="Changes" comment="dodavanje intefejsa SaPorukom i realizaicija druge verzije klase KolekcijaPoruka">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/InformacijeONastavniku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/InformacijeONastavniku.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/InformacijeOStudentu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/InformacijeOStudentu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/KolekcijaPoruka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/KolekcijaPoruka.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/LicneInformacije.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/LicneInformacije.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Predmet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Predmet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +39,11 @@
         </map>
       </branch-storage>
     </excluded-from-favorite>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="lv5-z1" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -125,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700300312811</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="dodavanje intefejsa SaPorukom i realizaicija druge verzije klase KolekcijaPoruka">
+      <created>1700308477233</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700308477233</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,6 +153,7 @@
     <MESSAGE value="dodavanje i implementacija klase Predmet" />
     <MESSAGE value="Dodavnje KolekcijaPoruka i interfejsa Predstavljiv" />
     <MESSAGE value="implementacija konstrukora koji prima genericku listu" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementacija konstrukora koji prima genericku listu" />
+    <MESSAGE value="dodavanje intefejsa SaPorukom i realizaicija druge verzije klase KolekcijaPoruka" />
+    <option name="LAST_COMMIT_MESSAGE" value="dodavanje intefejsa SaPorukom i realizaicija druge verzije klase KolekcijaPoruka" />
   </component>
 </project>
