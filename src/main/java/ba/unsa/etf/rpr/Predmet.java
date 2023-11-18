@@ -1,8 +1,12 @@
 package ba.unsa.etf.rpr;
 
+import java.util.List;
+
 public class Predmet implements SaPorukom{
     private String naziv;
     private String opis;
+
+    private List<Ocjena> ocjene;
 
     public String getNaziv(){
         return this.naziv;
