@@ -5,6 +5,7 @@ public class Ocjena {
     private int ocjena;
 
     public Ocjena(LicneInformacije osoba, int ocjena){
+        if(ocjena < 0 || ocjena > 10) throw new IllegalArgumentException("Ocjena izvan dozvoljenog opsega!");
         this.osoba = osoba;
         this.ocjena = ocjena;
     }

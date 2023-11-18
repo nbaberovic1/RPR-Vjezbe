@@ -6,6 +6,17 @@ public class Main {
 
     public static void main (String[]args){
         while(true){
+
+            Predmet predmet = new Predmet();
+            predmet.setNaziv("RPR");
+            predmet.setOpis("Predmet na drugoj godini ETF-a.");
+
+            InformacijeONastavniku nastavnik = new InformacijeONastavniku();
+
+            nastavnik.setIme("Profa");
+            nastavnik.setPrezime("Profic");
+            nastavnik.setTitula("prof");
+
             Scanner ulaz = new Scanner(System.in);
             System.out.println("""
                     Ako ste student pritisnite 1,
@@ -20,10 +31,12 @@ public class Main {
 
             LicneInformacije osoba = null;
 
+            ulaz.nextLine();
+
             System.out.println("Unesite ime: ");
             String ime = ulaz.nextLine();
 
-            System.out.println("Unesite prezime: "):
+            System.out.println("Unesite prezime: ");
             String prezime = ulaz.nextLine();
 
             switch (uloga) {
@@ -53,6 +66,29 @@ public class Main {
                     break;
             }
 
+            System.out.println("Unesite ocjenu: ");
+            int o = ulaz.nextInt();
+            Ocjena ocjena = null;
+            try{
+                ocjena = new Ocjena(osoba, o);
+            }catch(Exception ex){
+                System.out.println(ex.getMessage());
+                continue;
+            }
+
+            System.out.println("Zelite li ocijeniti predmet ili nastavnika, za odabir unesite 1 ili 2 respektivno: ");
+            int odabir = ulaz.nextInt();
+
+            switch (odabir){
+                case 1:
+                    predmet.dodajOcjenu(ocjena);
+                    System.out.println("Ocjena uspjesno dodana.");
+                    break;
+                case 2:
+                    break;
+                default:
+                    break;
+            }
         }
 
     }
