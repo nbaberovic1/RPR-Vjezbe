@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b65f5f5e-1fa9-4062-a016-bdfdbd922d1d" name="Changes" comment="Dodavnje KolekcijaPoruka i interfejsa Predstavljiv">
+    <list default="true" id="b65f5f5e-1fa9-4062-a016-bdfdbd922d1d" name="Changes" comment="implementacija konstrukora koji prima genericku listu">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/SaPorukom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/InformacijeONastavniku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/InformacijeONastavniku.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/InformacijeOStudentu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/InformacijeOStudentu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/KolekcijaPoruka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/KolekcijaPoruka.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/LicneInformacije.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/LicneInformacije.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Predmet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Predmet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700299113085</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="implementacija konstrukora koji prima genericku listu">
+      <created>1700300312811</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700300312811</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,6 +146,7 @@
     <MESSAGE value="Implementacija main klase sa primjerima koristenja prije implemetiranih klasa" />
     <MESSAGE value="dodavanje i implementacija klase Predmet" />
     <MESSAGE value="Dodavnje KolekcijaPoruka i interfejsa Predstavljiv" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodavnje KolekcijaPoruka i interfejsa Predstavljiv" />
+    <MESSAGE value="implementacija konstrukora koji prima genericku listu" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementacija konstrukora koji prima genericku listu" />
   </component>
 </project>
