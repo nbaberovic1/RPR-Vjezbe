@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b65f5f5e-1fa9-4062-a016-bdfdbd922d1d" name="Changes" comment="Dodavanje i implementacija klase InformacijeONastavniku" />
+    <list default="true" id="b65f5f5e-1fa9-4062-a016-bdfdbd922d1d" name="Changes" comment="Implementacija main klase sa primjerima koristenja prije implemetiranih klasa">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Predmet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700295564887</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Implementacija main klase sa primjerima koristenja prije implemetiranih klasa">
+      <created>1700296701151</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700296701151</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,6 +116,7 @@
     <MESSAGE value="Dodavanje i implementacija klase LicneInformacije" />
     <MESSAGE value="Dodavanje i implementacija klase InformacijeOStudentu" />
     <MESSAGE value="Dodavanje i implementacija klase InformacijeONastavniku" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodavanje i implementacija klase InformacijeONastavniku" />
+    <MESSAGE value="Implementacija main klase sa primjerima koristenja prije implemetiranih klasa" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementacija main klase sa primjerima koristenja prije implemetiranih klasa" />
   </component>
 </project>
