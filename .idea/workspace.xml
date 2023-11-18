@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b65f5f5e-1fa9-4062-a016-bdfdbd922d1d" name="Changes" comment="Dodavanje i implementacija klase LicneInformacije">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/InformacijeOStudentu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/InformacijeOStudentu.java" afterDir="false" />
-    </list>
+    <list default="true" id="b65f5f5e-1fa9-4062-a016-bdfdbd922d1d" name="Changes" comment="Dodavanje i implementacija klase InformacijeONastavniku" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +74,21 @@
       <option name="project" value="LOCAL" />
       <updated>1700294967244</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Dodavanje i implementacija klase InformacijeOStudentu">
+      <created>1700295379857</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700295379857</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Dodavanje i implementacija klase InformacijeONastavniku">
+      <created>1700295564887</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700295564887</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -92,6 +104,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Dodavanje i implementacija klase LicneInformacije" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodavanje i implementacija klase LicneInformacije" />
+    <MESSAGE value="Dodavanje i implementacija klase InformacijeOStudentu" />
+    <MESSAGE value="Dodavanje i implementacija klase InformacijeONastavniku" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodavanje i implementacija klase InformacijeONastavniku" />
   </component>
 </project>
