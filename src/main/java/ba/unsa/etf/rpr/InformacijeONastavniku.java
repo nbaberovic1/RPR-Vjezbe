@@ -1,10 +1,19 @@
 package ba.unsa.etf.rpr;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class InformacijeONastavniku extends LicneInformacije implements SaPorukom {
     private String titula;
     private List<Ocjena> ocjene;
+
+    public InformacijeONastavniku(){
+        this.ocjene = new ArrayList<Ocjena>();
+    }
+
+    public void dodajOcjenu(Ocjena ocjena){
+        this.ocjene.add(ocjena);
+    }
 
     public String getTitula(){
         return this.titula;

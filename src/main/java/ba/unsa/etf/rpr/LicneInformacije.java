@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr;
 
-public class LicneInformacije implements SaPorukom {
+public class LicneInformacije implements SaPorukom, MozeOcijeniti {
     private String ime;
     private String prezime;
 
@@ -23,5 +23,10 @@ public class LicneInformacije implements SaPorukom {
     @Override
     public String dajPoruku() {
         return new StringBuilder().append(ime).append(" ").append(prezime).toString();
+    }
+
+    @Override
+    public Ocjena ocijeni(int x) {
+        return new Ocjena(this, x);
     }
 }

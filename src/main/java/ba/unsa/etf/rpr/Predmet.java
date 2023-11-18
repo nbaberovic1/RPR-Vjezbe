@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Predmet implements SaPorukom{
@@ -7,6 +8,14 @@ public class Predmet implements SaPorukom{
     private String opis;
 
     private List<Ocjena> ocjene;
+
+    public Predmet(){
+        this.ocjene = new ArrayList<Ocjena>();
+    }
+
+    public void dodajOcjenu(Ocjena ocjena){
+        this.ocjene.add(ocjena);
+    }
 
     public String getNaziv(){
         return this.naziv;

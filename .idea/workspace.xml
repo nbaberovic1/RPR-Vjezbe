@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b65f5f5e-1fa9-4062-a016-bdfdbd922d1d" name="Changes" comment="dodavanje klase Ocjena">
+    <list default="true" id="b65f5f5e-1fa9-4062-a016-bdfdbd922d1d" name="Changes" comment="dodavanje liste ocjena u klase Predmet i InformacijeONastavniku">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Ocjena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Ocjena.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/InformacijeONastavniku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/InformacijeONastavniku.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/LicneInformacije.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/LicneInformacije.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Predmet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Predmet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +149,21 @@
       <option name="project" value="LOCAL" />
       <updated>1700310925180</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="implementacija konstruktora i metode setOcjena">
+      <created>1700323075228</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1700323075228</updated>
+    </task>
+    <task id="LOCAL-00012" summary="dodavanje liste ocjena u klase Predmet i InformacijeONastavniku">
+      <created>1700323298014</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1700323298014</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -171,6 +188,8 @@
     <MESSAGE value="dodavanje intefejsa SaPorukom i realizaicija druge verzije klase KolekcijaPoruka" />
     <MESSAGE value="dodavnje interfejsa MozeOcijeniti" />
     <MESSAGE value="dodavanje klase Ocjena" />
-    <option name="LAST_COMMIT_MESSAGE" value="dodavanje klase Ocjena" />
+    <MESSAGE value="implementacija konstruktora i metode setOcjena" />
+    <MESSAGE value="dodavanje liste ocjena u klase Predmet i InformacijeONastavniku" />
+    <option name="LAST_COMMIT_MESSAGE" value="dodavanje liste ocjena u klase Predmet i InformacijeONastavniku" />
   </component>
 </project>
