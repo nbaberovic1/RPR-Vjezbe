@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29538d2b-2b92-412d-b383-79bf7f55bd7f" name="Changes" comment="Dodavanje i implementacija klase KolekcijaImena">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Pobjednik.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="29538d2b-2b92-412d-b383-79bf7f55bd7f" name="Changes" comment="Dodavanje i implementacija klase Pobjednik">
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/KolekcijaImena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/KolekcijaImena.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +56,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700404654452</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Dodavanje i implementacija klase Pobjednik">
+      <created>1700407344626</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700407344626</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -72,6 +79,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Dodavanje i implementacija klase KolekcijaImena" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodavanje i implementacija klase KolekcijaImena" />
+    <MESSAGE value="Dodavanje i implementacija klase Pobjednik" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodavanje i implementacija klase Pobjednik" />
   </component>
 </project>

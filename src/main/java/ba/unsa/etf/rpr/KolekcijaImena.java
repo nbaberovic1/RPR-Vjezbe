@@ -17,4 +17,14 @@ public class KolekcijaImena {
         }
         return najduzeIme;
     }
+
+    public void dodajIme(String ime){
+        String[] imeIPrezime = ime.split("//s");
+        if(imeIPrezime.length != 2) throw new IllegalArgumentException("Neodgovarajuci format imena!");
+        this.imena.add(ime);
+    }
+
+    public ArrayList<String> getImena(){
+        return this.imena;
+    }
 }
