@@ -18,4 +18,8 @@ public class KolekcijaImenaIPrezimena {
         }
         return index;
     }
+
+    public String getImeiPrezime(int i){
+        return new StringBuilder().append(imena.get(i)).append(" ").append(prezimena.get(i)).toString();
+    }
 }
