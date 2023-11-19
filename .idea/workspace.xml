@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b65f5f5e-1fa9-4062-a016-bdfdbd922d1d" name="Changes" comment="dodavanje mogucnosti ispisa ocjena za predmet">
+    <list default="true" id="b65f5f5e-1fa9-4062-a016-bdfdbd922d1d" name="Changes" comment="dodavanje mogucnosti ispisa ocjena za nastavnika">
       <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700383396719</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="dodavanje mogucnosti ispisa ocjena za nastavnika">
+      <created>1700383784647</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1700383784647</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,6 +233,7 @@
     <MESSAGE value="implementacija za unos ocjene i odabira za sta unosimo ocjenu" />
     <MESSAGE value="dorade main klase tako da radi za predmet i nastavnika" />
     <MESSAGE value="dodavanje mogucnosti ispisa ocjena za predmet" />
-    <option name="LAST_COMMIT_MESSAGE" value="dodavanje mogucnosti ispisa ocjena za predmet" />
+    <MESSAGE value="dodavanje mogucnosti ispisa ocjena za nastavnika" />
+    <option name="LAST_COMMIT_MESSAGE" value="dodavanje mogucnosti ispisa ocjena za nastavnika" />
   </component>
 </project>

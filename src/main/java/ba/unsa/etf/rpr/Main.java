@@ -116,7 +116,7 @@ public class Main {
             ulaz.nextLine();
             Ocjena ocjena = null;
             try{
-                ocjena = new Ocjena(osoba, o);
+                ocjena = osoba.ocijeni(o);
             }catch(Exception ex){
                 System.out.println(ex.getMessage());
                 continue;
