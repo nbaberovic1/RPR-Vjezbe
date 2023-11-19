@@ -13,4 +13,20 @@ public class Pobjednik {
         this.prezime = imeIPrezime[1];
         this.brojZnakova = this.ime.length();
     }
+
+    public String getIme() {
+        return ime;
+    }
+
+    public String getPrezime() {
+        return prezime;
+    }
+
+    public int getBrojZnakova() {
+        return brojZnakova;
+    }
+
+    public KolekcijaImena getKolekcijaImena() {
+        return kolekcijaImena;
+    }
 }
