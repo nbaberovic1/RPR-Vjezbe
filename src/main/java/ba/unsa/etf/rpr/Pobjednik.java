@@ -8,7 +8,7 @@ public class Pobjednik {
 
     public Pobjednik(KolekcijaImena kolekcijaImena){
         this.kolekcijaImena = kolekcijaImena;
-        String[] imeIPrezime = this.kolekcijaImena.getNajduzeIme().split("//s");
+        String[] imeIPrezime = this.kolekcijaImena.getNajduzeIme().split("\\s+");
         this.ime = imeIPrezime[0];
         this.prezime = imeIPrezime[1];
         this.brojZnakova = this.ime.length();

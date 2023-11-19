@@ -24,6 +24,10 @@ public class Main {
         System.out.println("Najduze ime iz kolekcije je: " + kolekcijaImena.getNajduzeIme());
         System.out.println();
 
+        Pobjednik pobjednik = new Pobjednik(kolekcijaImena);
 
+        System.out.println("Ime pobjednika je: " + pobjednik.getIme());
+        System.out.println("Prezime je: " + pobjednik.getPrezime());
+        System.out.println("Duzina imena je: " + pobjednik.getBrojZnakova());
     }
 }

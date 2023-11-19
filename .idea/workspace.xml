@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29538d2b-2b92-412d-b383-79bf7f55bd7f" name="Changes" comment="dodavanje getera u klasu Pobjednik kako bi se mogla koristiti u main-u">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/KolekcijaImena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/KolekcijaImena.java" afterDir="false" />
+    <list default="true" id="29538d2b-2b92-412d-b383-79bf7f55bd7f" name="Changes" comment="dodavanje primjera koristenja klase KolekcijaImena">
       <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Pobjednik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Pobjednik.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700408845697</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="dodavanje primjera koristenja klase KolekcijaImena">
+      <created>1700417366814</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700417366814</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -97,6 +103,7 @@
     <MESSAGE value="Dodavanje i implementacija klase Pobjednik" />
     <MESSAGE value="dodavanje dodatnih funkcija u KolekcijaImena klasu da bi se mogla koristiti u main metodi" />
     <MESSAGE value="dodavanje getera u klasu Pobjednik kako bi se mogla koristiti u main-u" />
-    <option name="LAST_COMMIT_MESSAGE" value="dodavanje getera u klasu Pobjednik kako bi se mogla koristiti u main-u" />
+    <MESSAGE value="dodavanje primjera koristenja klase KolekcijaImena" />
+    <option name="LAST_COMMIT_MESSAGE" value="dodavanje primjera koristenja klase KolekcijaImena" />
   </component>
 </project>
