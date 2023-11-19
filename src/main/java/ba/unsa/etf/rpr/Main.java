@@ -1,23 +1,26 @@
 package ba.unsa.etf.rpr;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main (String[]args){
+
+        Predmet predmet = new Predmet();
+        predmet.setNaziv("RPR");
+        predmet.setOpis("Predmet na drugoj godini ETF-a.");
+        predmet.dodajOcjenu(new Ocjena(new LicneInformacije(), 7));
+
+        InformacijeONastavniku nastavnik = new InformacijeONastavniku();
+
+        nastavnik.setIme("Profa");
+        nastavnik.setPrezime("Profic");
+        nastavnik.setTitula("prof");
+
+        Scanner ulaz = new Scanner(System.in);
+
         while(true){
-
-            Predmet predmet = new Predmet();
-            predmet.setNaziv("RPR");
-            predmet.setOpis("Predmet na drugoj godini ETF-a.");
-
-            InformacijeONastavniku nastavnik = new InformacijeONastavniku();
-
-            nastavnik.setIme("Profa");
-            nastavnik.setPrezime("Profic");
-            nastavnik.setTitula("prof");
-
-            Scanner ulaz = new Scanner(System.in);
 
             System.out.println("""
             Ako zelite ocijeniti: predmet unesite 1,
@@ -26,14 +29,28 @@ public class Main {
                                             nastavnika unesite 4.
             A za izlaz iz programa unesite 0: """);
 
-            int odabirZaOcijeniti = ulaz.nextInt();
+            int odabir = ulaz.nextInt();
             ulaz.nextLine();
 
-            if(odabirZaOcijeniti == 0){
-                System.exit(0);
-            }else if(odabirZaOcijeniti <1 || odabirZaOcijeniti>2){
+            if(odabir < 0 || odabir > 4){
                 System.out.println("Neispravan izbor! ");
                 continue;
+            }
+
+            switch (odabir){
+                case 3:
+                    System.out.println(predmet.getNaziv());
+                    ArrayList<Ocjena> ocjene = predmet.getOcjene();
+                    for(Ocjena ocjena : ocjene){
+                        System.out.print(ocjena.getOcjena() + " ");
+                    }
+                    System.out.println();
+                    continue;
+                case 4:
+                    break;
+                case 0:
+                    System.exit(0);
+                    break;
             }
 
             System.out.println("""
@@ -48,7 +65,7 @@ public class Main {
                 continue;
             }
 
-            if(odabirZaOcijeniti == 2 && uloga != 1){
+            if(odabir == 2 && uloga != 1){
                 System.out.println("Vi ne mozete ocijeniti nastavnika!");
                 continue;
             }
@@ -91,6 +108,7 @@ public class Main {
 
             System.out.println("Unesite ocjenu: ");
             int o = ulaz.nextInt();
+            ulaz.nextLine();
             Ocjena ocjena = null;
             try{
                 ocjena = new Ocjena(osoba, o);
@@ -99,7 +117,7 @@ public class Main {
                 continue;
             }
 
-            if(odabirZaOcijeniti == 1) {
+            if(odabir == 1) {
                 predmet.dodajOcjenu(ocjena);
                 System.out.println("Uspjesno ocijenjen predmet.");
             }else{

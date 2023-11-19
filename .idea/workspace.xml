@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b65f5f5e-1fa9-4062-a016-bdfdbd922d1d" name="Changes" comment="implementacija za unos ocjene i odabira za sta unosimo ocjenu">
+    <list default="true" id="b65f5f5e-1fa9-4062-a016-bdfdbd922d1d" name="Changes" comment="dorade main klase tako da radi za predmet i nastavnika">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/InformacijeONastavniku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/InformacijeONastavniku.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Ocjena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Ocjena.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Predmet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Predmet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700341563068</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="dorade main klase tako da radi za predmet i nastavnika">
+      <created>1700380147241</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1700380147241</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -211,6 +221,7 @@
     <MESSAGE value="pocetni ispis u Main klasi" />
     <MESSAGE value="implementacija unosa informacija o osobi" />
     <MESSAGE value="implementacija za unos ocjene i odabira za sta unosimo ocjenu" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementacija za unos ocjene i odabira za sta unosimo ocjenu" />
+    <MESSAGE value="dorade main klase tako da radi za predmet i nastavnika" />
+    <option name="LAST_COMMIT_MESSAGE" value="dorade main klase tako da radi za predmet i nastavnika" />
   </component>
 </project>

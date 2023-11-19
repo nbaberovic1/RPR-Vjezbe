@@ -7,7 +7,7 @@ public class Predmet implements SaPorukom{
     private String naziv;
     private String opis;
 
-    private List<Ocjena> ocjene;
+    private ArrayList<Ocjena> ocjene;
 
     public Predmet(){
         this.ocjene = new ArrayList<Ocjena>();
@@ -15,6 +15,10 @@ public class Predmet implements SaPorukom{
 
     public void dodajOcjenu(Ocjena ocjena){
         this.ocjene.add(ocjena);
+    }
+
+    public ArrayList<Ocjena> getOcjene(){
+        return this.ocjene;
     }
 
     public String getNaziv(){

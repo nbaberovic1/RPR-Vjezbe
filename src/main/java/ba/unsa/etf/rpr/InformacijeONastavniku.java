@@ -5,7 +5,7 @@ import java.util.List;
 
 public class InformacijeONastavniku extends LicneInformacije implements SaPorukom {
     private String titula;
-    private List<Ocjena> ocjene;
+    private ArrayList<Ocjena> ocjene;
 
     public InformacijeONastavniku(){
         this.ocjene = new ArrayList<Ocjena>();
@@ -13,6 +13,10 @@ public class InformacijeONastavniku extends LicneInformacije implements SaPoruko
 
     public void dodajOcjenu(Ocjena ocjena){
         this.ocjene.add(ocjena);
+    }
+
+    public ArrayList<Ocjena> getOcjene(){
+        return this.ocjene;
     }
 
     public String getTitula(){
