@@ -6,6 +6,11 @@ public class KolekcijaImenaIPrezimena implements Kolekcija{
     private ArrayList<String> imena;
     private ArrayList<String> prezimena;
 
+    public KolekcijaImenaIPrezimena(){
+        imena = new ArrayList<>();
+        prezimena = new ArrayList<>();
+    }
+
     public int getIndexNajduzegPara(){
         int index = -1;
         String najduziPar = "";
@@ -19,8 +24,13 @@ public class KolekcijaImenaIPrezimena implements Kolekcija{
         return index;
     }
 
-    public String getImeiPrezime(int i){
+    public String getImeIPrezime(int i){
         return new StringBuilder().append(imena.get(i)).append(" ").append(prezimena.get(i)).toString();
+    }
+
+    public void setImeIPrezime(String ime, String prezime){
+        this.imena.add(ime);
+        this.prezimena.add(prezime);
     }
 
     @Override
