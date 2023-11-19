@@ -10,7 +10,6 @@ public class Main {
         Predmet predmet = new Predmet();
         predmet.setNaziv("RPR");
         predmet.setOpis("Predmet na drugoj godini ETF-a.");
-        predmet.dodajOcjenu(new Ocjena(new LicneInformacije(), 7));
 
         InformacijeONastavniku nastavnik = new InformacijeONastavniku();
 
@@ -40,14 +39,20 @@ public class Main {
             switch (odabir){
                 case 3:
                     System.out.println(predmet.getNaziv());
-                    ArrayList<Ocjena> ocjene = predmet.getOcjene();
-                    for(Ocjena ocjena : ocjene){
+                    ArrayList<Ocjena> ocjenePredmet = predmet.getOcjene();
+                    for(Ocjena ocjena : ocjenePredmet){
                         System.out.print(ocjena.getOcjena() + " ");
                     }
                     System.out.println();
                     continue;
                 case 4:
-                    break;
+                    System.out.println(nastavnik.getTitula() + " " + nastavnik.getIme() + " " + nastavnik.getPrezime());
+                    ArrayList<Ocjena> ocjeneNastavnik = nastavnik.getOcjene();
+                    for(Ocjena ocjena : ocjeneNastavnik){
+                        System.out.print(ocjena.getOcjena() + " ");
+                    }
+                    System.out.println();
+                    continue;
                 case 0:
                     System.exit(0);
                     break;
