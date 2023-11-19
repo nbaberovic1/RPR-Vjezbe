@@ -19,7 +19,7 @@ public class KolekcijaImena {
     }
 
     public void dodajIme(String ime){
-        String[] imeIPrezime = ime.split("//s");
+        String[] imeIPrezime = ime.split("\\s+");
         if(imeIPrezime.length != 2) throw new IllegalArgumentException("Neodgovarajuci format imena!");
         this.imena.add(ime);
     }
