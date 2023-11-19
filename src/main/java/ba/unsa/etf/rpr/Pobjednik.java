@@ -4,13 +4,12 @@ public class Pobjednik {
     private String ime;
     private String prezime;
     private int brojZnakova;
-    private KolekcijaImena kolekcijaImena;
+    private Kolekcija kolekcijaImena;
 
-    public Pobjednik(KolekcijaImena kolekcijaImena){
-        this.kolekcijaImena = kolekcijaImena;
-        String[] imeIPrezime = this.kolekcijaImena.getNajduzeIme().split("\\s+");
-        this.ime = imeIPrezime[0];
-        this.prezime = imeIPrezime[1];
+    public Pobjednik(Kolekcija kolekcija){
+        this.kolekcijaImena = kolekcija;
+        this.ime = kolekcija.getImeNajduzegImenaIPrezimena();
+        this.prezime = kolekcija.getPrezimeNajduzegImenaIPrezimena();
         this.brojZnakova = this.ime.length();
     }
 
@@ -26,7 +25,7 @@ public class Pobjednik {
         return brojZnakova;
     }
 
-    public KolekcijaImena getKolekcijaImena() {
+    public Kolekcija getKolekcijaImena() {
         return kolekcijaImena;
     }
 }

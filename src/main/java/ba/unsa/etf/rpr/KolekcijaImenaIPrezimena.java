@@ -2,7 +2,7 @@ package ba.unsa.etf.rpr;
 
 import java.util.ArrayList;
 
-public class KolekcijaImenaIPrezimena {
+public class KolekcijaImenaIPrezimena implements Kolekcija{
     private ArrayList<String> imena;
     private ArrayList<String> prezimena;
 
@@ -21,5 +21,15 @@ public class KolekcijaImenaIPrezimena {
 
     public String getImeiPrezime(int i){
         return new StringBuilder().append(imena.get(i)).append(" ").append(prezimena.get(i)).toString();
+    }
+
+    @Override
+    public String getImeNajduzegImenaIPrezimena() {
+        return imena.get(this.getIndexNajduzegPara());
+    }
+
+    @Override
+    public String getPrezimeNajduzegImenaIPrezimena() {
+        return prezimena.get(this.getIndexNajduzegPara());
     }
 }
