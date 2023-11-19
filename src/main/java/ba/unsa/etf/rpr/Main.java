@@ -18,20 +18,43 @@ public class Main {
             nastavnik.setTitula("prof");
 
             Scanner ulaz = new Scanner(System.in);
+
+            System.out.println("""
+            Ako zelite ocijeniti: predmet unesite 1,
+                               nastavnika unesite 2.
+            Ako zelite da se ispisu ocjene za: predmet unesite 3,
+                                            nastavnika unesite 4.
+            A za izlaz iz programa unesite 0: """);
+
+            int odabirZaOcijeniti = ulaz.nextInt();
+            ulaz.nextLine();
+
+            if(odabirZaOcijeniti == 0){
+                System.exit(0);
+            }else if(odabirZaOcijeniti <1 || odabirZaOcijeniti>2){
+                System.out.println("Neispravan izbor! ");
+                continue;
+            }
+
             System.out.println("""
                     Ako ste student pritisnite 1,
                     ako ste nastavnik pritisnike 2,
-                    ako ste neko drugi pritisnite 3: """);
+                    ako ste neko drugi pritisnite 3:""");
 
             int uloga = ulaz.nextInt();
+            ulaz.nextLine();
             if(uloga<1 || uloga>3) {
                 System.out.println("Neispravan unos!");
                 continue;
             }
 
+            if(odabirZaOcijeniti == 2 && uloga != 1){
+                System.out.println("Vi ne mozete ocijeniti nastavnika!");
+                continue;
+            }
+
             LicneInformacije osoba = null;
 
-            ulaz.nextLine();
 
             System.out.println("Unesite ime: ");
             String ime = ulaz.nextLine();
@@ -76,24 +99,13 @@ public class Main {
                 continue;
             }
 
-            System.out.println("Zelite li ocijeniti predmet ili nastavnika, za odabir unesite 1 ili 2 respektivno: ");
-            int odabir = ulaz.nextInt();
-
-            switch (odabir){
-                case 1:
-                    predmet.dodajOcjenu(ocjena);
-                    System.out.println("Ocjena uspjesno dodana.");
-                    break;
-                case 2:
-                    break;
-                default:
-                    break;
+            if(odabirZaOcijeniti == 1) {
+                predmet.dodajOcjenu(ocjena);
+                System.out.println("Uspjesno ocijenjen predmet.");
+            }else{
+                nastavnik.dodajOcjenu(ocjena);
+                System.out.println("Uspjesno ocijenjen nastavnik.");
             }
         }
-
     }
-
-
-
-
 }
