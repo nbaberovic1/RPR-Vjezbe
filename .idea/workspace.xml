@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29538d2b-2b92-412d-b383-79bf7f55bd7f" name="Changes" comment="dodavanje primjera koristenja klase Pobjednik">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/KolekcijaImenaIPrezimena.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="29538d2b-2b92-412d-b383-79bf7f55bd7f" name="Changes" comment="implementacija getImeiPrezime">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Kolekcija.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +16,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -91,7 +91,21 @@
       <option name="project" value="LOCAL" />
       <updated>1700417702270</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="dodavanje klase KolekcijaImenaIPrezimena i metode getIndexNjaduzegPara">
+      <created>1700419776590</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700419776590</updated>
+    </task>
+    <task id="LOCAL-00008" summary="implementacija getImeiPrezime">
+      <created>1700419954225</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1700419954225</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,6 +126,8 @@
     <MESSAGE value="dodavanje getera u klasu Pobjednik kako bi se mogla koristiti u main-u" />
     <MESSAGE value="dodavanje primjera koristenja klase KolekcijaImena" />
     <MESSAGE value="dodavanje primjera koristenja klase Pobjednik" />
-    <option name="LAST_COMMIT_MESSAGE" value="dodavanje primjera koristenja klase Pobjednik" />
+    <MESSAGE value="dodavanje klase KolekcijaImenaIPrezimena i metode getIndexNjaduzegPara" />
+    <MESSAGE value="implementacija getImeiPrezime" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementacija getImeiPrezime" />
   </component>
 </project>
