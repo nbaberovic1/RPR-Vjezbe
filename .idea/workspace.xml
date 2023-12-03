@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd662424-5e64-492e-84a1-9be571d102f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/openjfx.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JavaFXApp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/JavaFXApp.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpr-t5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rpr20-tutorijal6.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/tutorijal05/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/tutorijal06/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/tutorijal05/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/tutorijal06/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/tutorijal05/digitron.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fxml/digitron.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/ba/unsa/etf/rpr/tutorijal05/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ba/unsa/etf/rpr/tutorijal06/MainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fxml/digitron.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fxml/digitron.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,20 +13,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1krhg7URHPj3GqmdhmlcMyqNNWs" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/fxml" />
@@ -61,37 +54,10 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="2024" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606465030379">
-      <screen x="1600" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2024" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.900/1600.0.1920.1080@1600.0.1920.1080" timestamp="1606465030379" />
-    <state width="1878" height="278" key="GridCell.Tab.0.bottom" timestamp="1606464993875">
-      <screen x="1600" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="278" key="GridCell.Tab.0.bottom/0.0.1600.900/1600.0.1920.1080@1600.0.1920.1080" timestamp="1606464993875" />
-    <state width="1878" height="278" key="GridCell.Tab.0.center" timestamp="1606464993874">
-      <screen x="1600" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="278" key="GridCell.Tab.0.center/0.0.1600.900/1600.0.1920.1080@1600.0.1920.1080" timestamp="1606464993874" />
-    <state width="1878" height="278" key="GridCell.Tab.0.left" timestamp="1606464993874">
-      <screen x="1600" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="278" key="GridCell.Tab.0.left/0.0.1600.900/1600.0.1920.1080@1600.0.1920.1080" timestamp="1606464993874" />
-    <state width="1878" height="278" key="GridCell.Tab.0.right" timestamp="1606464993875">
-      <screen x="1600" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1878" height="278" key="GridCell.Tab.0.right/0.0.1600.900/1600.0.1920.1080@1600.0.1920.1080" timestamp="1606464993875" />
-    <state x="2048" y="103" key="SettingsEditor" timestamp="1606465022924">
-      <screen x="1600" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2048" y="103" key="SettingsEditor/0.0.1600.900/1600.0.1920.1080@1600.0.1920.1080" timestamp="1606465022924" />
   </component>
 </project>
