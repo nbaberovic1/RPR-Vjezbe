@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd662424-5e64-492e-84a1-9be571d102f6" name="Default Changelist" comment="implementacija onAction metoda">
+    <list default="true" id="bd662424-5e64-492e-84a1-9be571d102f6" name="Default Changelist" comment="povecanje velicine ispisa na ekran u Scene Builder-u">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/digitron.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/digitron.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/fxml/digitron.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fxml/digitron.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/tutorijal06/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/tutorijal06/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ba/unsa/etf/rpr/tutorijal06/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ba/unsa/etf/rpr/tutorijal06/MainTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +42,93 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/fxml" />
     </key>
+  </component>
+  <component name="RunManager" selected="JUnit.MainTest">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.tutorijal06.Main" />
+      <module name="rpr20-tutorijal6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ba.unsa.etf.rpr.tutorijal06.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpr20-tutorijal6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ba.unsa.etf.rpr.tutorijal06.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ba.unsa.etf.rpr.tutorijal06" />
+      <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.tutorijal06.MainTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest.dotBtn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpr20-tutorijal6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ba.unsa.etf.rpr.tutorijal06.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ba.unsa.etf.rpr.tutorijal06" />
+      <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.tutorijal06.MainTest" />
+      <option name="METHOD_NAME" value="dotBtn(org.testfx.api.FxRobot)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest.number123Plus456" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpr20-tutorijal6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ba.unsa.etf.rpr.tutorijal06.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ba.unsa.etf.rpr.tutorijal06" />
+      <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.tutorijal06.MainTest" />
+      <option name="METHOD_NAME" value="number123Plus456(org.testfx.api.FxRobot)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest.startWithZero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpr20-tutorijal6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ba.unsa.etf.rpr.tutorijal06.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ba.unsa.etf.rpr.tutorijal06" />
+      <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.tutorijal06.MainTest" />
+      <option name="METHOD_NAME" value="startWithZero(org.testfx.api.FxRobot)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MainTest" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.MainTest.number123Plus456" />
+        <item itemvalue="JUnit.MainTest.dotBtn" />
+        <item itemvalue="JUnit.MainTest.startWithZero" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -77,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701700527557</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="povecanje velicine ispisa na ekran u Scene Builder-u">
+      <created>1701700998061</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701700998061</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -99,7 +196,8 @@
     <MESSAGE value="css za dodavanje pozadinskih boja" />
     <MESSAGE value="dodavanje onAction metoda u controller" />
     <MESSAGE value="implementacija onAction metoda" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementacija onAction metoda" />
+    <MESSAGE value="povecanje velicine ispisa na ekran u Scene Builder-u" />
+    <option name="LAST_COMMIT_MESSAGE" value="povecanje velicine ispisa na ekran u Scene Builder-u" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

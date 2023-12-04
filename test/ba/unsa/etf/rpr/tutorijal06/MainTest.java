@@ -15,7 +15,6 @@ import org.testfx.framework.junit5.Start;
 
 @ExtendWith(ApplicationExtension.class)
 class MainTest {
-
     private Label display;
 
     @Start
