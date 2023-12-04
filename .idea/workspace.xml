@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd662424-5e64-492e-84a1-9be571d102f6" name="Default Changelist" comment="css za dodavanje pozadinskih boja">
+    <list default="true" id="bd662424-5e64-492e-84a1-9be571d102f6" name="Default Changelist" comment="dodavanje onAction metoda u controller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/digitron.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/digitron.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/fxml/digitron.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fxml/digitron.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/tutorijal06/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/tutorijal06/Controller.java" afterDir="false" />
     </list>
@@ -65,7 +64,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701602634864</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="dodavanje onAction metoda u controller">
+      <created>1701678021339</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701678021339</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -85,7 +91,8 @@
     </ignored-roots>
     <MESSAGE value="Ubacivanje i podesavanje labele i dugmica u Scene Builder-u" />
     <MESSAGE value="css za dodavanje pozadinskih boja" />
-    <option name="LAST_COMMIT_MESSAGE" value="css za dodavanje pozadinskih boja" />
+    <MESSAGE value="dodavanje onAction metoda u controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="dodavanje onAction metoda u controller" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

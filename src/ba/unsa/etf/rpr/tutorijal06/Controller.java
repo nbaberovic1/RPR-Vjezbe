@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.util.ArrayList;
+
 public class Controller {
     @FXML
     private Label ekran;
@@ -171,7 +173,58 @@ public class Controller {
     }
 
     public void clickRes(ActionEvent actionEvent) {
-        ekran.setText("12345");
         pritisnutResultBtn = true;
+        String unos = ekran.getText();
+        ArrayList<Character> operacija = new ArrayList<>();
+        for(int i=0; i<unos.length(); i = i + 1){
+            if(unos.charAt(i) == '%' || unos.charAt(i) == '/' ||
+                    unos.charAt(i) == 'X' || unos.charAt(i) == '-'
+                    || unos.charAt(i) == '+'){
+                if(i==0 || i == unos.length()-1 || (!Character.isDigit(unos.charAt(i-1)) && unos.charAt(i-1) != '.')
+                        || (!Character.isDigit(unos.charAt(i+1)) && unos.charAt(i+1) != '.')){
+                    ekran.setText("Greska: neispravan unos!");
+                    return;
+                }
+                operacija.add(unos.charAt(i));
+            }
+        }
+        String brojevi = unos.replaceAll("[^\\d.]", " ");
+        String[] broj = brojevi.split("\\s+");
+        ArrayList<Double> listaBrojeva = new ArrayList<>();
+        for(int i =0; i<broj.length; i++){
+            listaBrojeva.add(Double.parseDouble(broj[i]));
+        }
+
+        for(int i=0; i<operacija.size(); i = i + 1){
+            if(operacija.get(i).equals('X')){
+                listaBrojeva.set(i, listaBrojeva.get(i) * listaBrojeva.get(i + 1));
+                listaBrojeva.remove(i + 1);
+                operacija.remove(i);
+                i = i - 1;
+            }else if(operacija.get(i).equals('/')){
+                listaBrojeva.set(i, listaBrojeva.get(i) / listaBrojeva.get(i + 1));
+                listaBrojeva.remove(i + 1);
+                operacija.remove(i);
+                i = i - 1;
+            }else if(operacija.get(i).equals('%')){
+                listaBrojeva.set(i, listaBrojeva.get(i) % listaBrojeva.get(i + 1));
+                listaBrojeva.remove(i + 1);
+                operacija.remove(i);kl
+                i = i - 1;
+            }
+        }
+
+        double rezultat = 0;
+        if(listaBrojeva.size() > 0) rezultat = listaBrojeva.get(0);
+
+        for(int i=0; i<operacija.size(); i = i + 1){
+            if(operacija.get(i).equals('+')){
+                rezultat += listaBrojeva.get(i + 1).doubleValue();
+            }else{
+                rezultat -= listaBrojeva.get(i + 1).doubleValue();
+            }
+        }
+
+        ekran.setText(String.valueOf(rezultat));
     }
 }
