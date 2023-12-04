@@ -105,4 +105,73 @@ class MainTest {
         robot.clickOn("#btn0");
         assertEquals("10", display.getText());
     }
+
+    @Test
+    public void invalidInput(FxRobot robot){
+        display = robot.lookup("#display").queryAs(Label.class);
+        robot.clickOn("#modBtn");
+        robot.clickOn("#btn7");
+        robot.clickOn("#btn8");
+        robot.clickOn("#minusBtn");
+        robot.clickOn("#btn9");
+        robot.clickOn("#equalsBtn");
+        assertEquals("Greska: neispravan unos!", display.getText());
+    }
+
+    @Test
+    public void number965Minus356Equals(FxRobot robot){
+        display = robot.lookup("#display").queryAs(Label.class);
+        robot.clickOn("#btn9");
+        robot.clickOn("#btn6");
+        robot.clickOn("#btn5");
+        robot.clickOn("#minusBtn");
+        robot.clickOn("#btn3");
+        robot.clickOn("#btn5");
+        robot.clickOn("#btn6");
+        robot.clickOn("#equalsBtn");
+        assertEquals("609.0", display.getText());
+    }
+
+    @Test
+    public void treeNumbersMult(FxRobot robot){
+        display = robot.lookup("#display").queryAs(Label.class);
+        robot.clickOn("#btn2");
+        robot.clickOn("#btn3");
+        robot.clickOn("#multiplicationBtn");
+        robot.clickOn("#btn9");
+        robot.clickOn("#multiplicationBtn");
+        robot.clickOn("#btn1");
+        robot.clickOn("#btn5");
+        assertEquals("15", display.getText());
+        robot.clickOn("#equalsBtn");
+        assertEquals("3105.0", display.getText());
+    }
+
+    @Test
+    public void divisionOfTwoNumbers(FxRobot robot){
+        display = robot.lookup("#display").queryAs(Label.class);
+        robot.clickOn("#btn1");
+        robot.clickOn("#btn0");
+        robot.clickOn("#btn2");
+        robot.clickOn("#btn4");
+        robot.clickOn("#divisionBtn");
+        robot.clickOn("#btn1");
+        robot.clickOn("#btn2");
+        robot.clickOn("#btn8");
+        robot.clickOn("#equalsBtn");
+        assertEquals("8.0", display.getText());
+    }
+
+    @Test
+    public void modOfTwoNumbers(FxRobot robot){
+        display = robot.lookup("#display").queryAs(Label.class);
+        robot.clickOn("#btn5");
+        robot.clickOn("#btn9");
+        robot.clickOn("#btn3");
+        robot.clickOn("#modBtn");
+        robot.clickOn("#btn2");
+        robot.clickOn("#btn8");
+        robot.clickOn("#equalsBtn");
+        assertEquals("5.0", display.getText());
+    }
 }

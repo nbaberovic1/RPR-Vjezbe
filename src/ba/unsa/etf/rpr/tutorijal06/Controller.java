@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Controller {
     @FXML
     private Label display;
-    private String unos = "0";
+    private String unos = "";
 
     private boolean trazenaOperacija = true;
 
