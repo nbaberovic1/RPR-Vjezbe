@@ -209,7 +209,7 @@ public class Controller {
             }else if(operacija.get(i).equals('%')){
                 listaBrojeva.set(i, listaBrojeva.get(i) % listaBrojeva.get(i + 1));
                 listaBrojeva.remove(i + 1);
-                operacija.remove(i);kl
+                operacija.remove(i);
                 i = i - 1;
             }
         }

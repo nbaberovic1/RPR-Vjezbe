@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd662424-5e64-492e-84a1-9be571d102f6" name="Default Changelist" comment="dodavanje onAction metoda u controller">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="bd662424-5e64-492e-84a1-9be571d102f6" name="Default Changelist" comment="implementacija onAction metoda">
       <change beforePath="$PROJECT_DIR$/resources/fxml/digitron.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/fxml/digitron.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/tutorijal06/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/tutorijal06/Controller.java" afterDir="false" />
     </list>
@@ -71,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701678021339</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="implementacija onAction metoda">
+      <created>1701700527557</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701700527557</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -92,7 +98,8 @@
     <MESSAGE value="Ubacivanje i podesavanje labele i dugmica u Scene Builder-u" />
     <MESSAGE value="css za dodavanje pozadinskih boja" />
     <MESSAGE value="dodavanje onAction metoda u controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="dodavanje onAction metoda u controller" />
+    <MESSAGE value="implementacija onAction metoda" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementacija onAction metoda" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
