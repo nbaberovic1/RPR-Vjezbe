@@ -174,4 +174,28 @@ class MainTest {
         robot.clickOn("#equalsBtn");
         assertEquals("5.0", display.getText());
     }
+
+    @Test
+    public void mixedOperations(FxRobot robot){
+        display = robot.lookup("#display").queryAs(Label.class);
+        robot.clickOn("#btn5");
+        robot.clickOn("#btn3");
+        robot.clickOn("#multiplicationBtn");
+        robot.clickOn("#btn2");
+        robot.clickOn("#btn2");
+        robot.clickOn("#plusBtn");
+        robot.clickOn("#btn5");
+        robot.clickOn("#btn1");
+        robot.clickOn("#btn0");
+        robot.clickOn("#divisionBtn");
+        robot.clickOn("#btn1");
+        robot.clickOn("#btn7");
+        robot.clickOn("#modBtn");
+        robot.clickOn("#btn1");
+        robot.clickOn("#btn0");
+        robot.clickOn("#minusBtn");
+        robot.clickOn("#btn7");
+        robot.clickOn("#equalsBtn");
+        assertEquals("1159.0", display.getText());
+    }
 }

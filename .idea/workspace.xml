@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd662424-5e64-492e-84a1-9be571d102f6" name="Default Changelist" comment="ispravke kako bi projekat bio prilagoden testovima">
+    <list default="true" id="bd662424-5e64-492e-84a1-9be571d102f6" name="Default Changelist" comment="testovi za nevalidan unos, oduzimanje, dijeljenje i mnozenje">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/tutorijal06/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/tutorijal06/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/ba/unsa/etf/rpr/tutorijal06/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/ba/unsa/etf/rpr/tutorijal06/MainTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +40,7 @@
       <recent name="$PROJECT_DIR$/resources/fxml" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MainTest.modOfTwoNumbers">
+  <component name="RunManager" selected="JUnit.MainTest.mixedOperations">
     <configuration name="MainTest.divisionOfTwoNumbers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rpr20-tutorijal6" />
       <extension name="coverage">
@@ -58,7 +57,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest.invalidInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainTest.mixedOperations" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rpr20-tutorijal6" />
       <extension name="coverage">
         <pattern>
@@ -68,7 +67,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="ba.unsa.etf.rpr.tutorijal06" />
       <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.tutorijal06.MainTest" />
-      <option name="METHOD_NAME" value="invalidInput(org.testfx.api.FxRobot)" />
+      <option name="METHOD_NAME" value="mixedOperations(org.testfx.api.FxRobot)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -124,11 +123,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MainTest.mixedOperations" />
         <item itemvalue="JUnit.MainTest.modOfTwoNumbers" />
         <item itemvalue="JUnit.MainTest.divisionOfTwoNumbers" />
         <item itemvalue="JUnit.MainTest.treeNumbersMult" />
         <item itemvalue="JUnit.MainTest.number965Minus356Equals" />
-        <item itemvalue="JUnit.MainTest.invalidInput" />
       </list>
     </recent_temporary>
   </component>
@@ -183,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701718925542</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="testovi za nevalidan unos, oduzimanje, dijeljenje i mnozenje">
+      <created>1701724770999</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701724770999</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -207,7 +213,8 @@
     <MESSAGE value="implementacija onAction metoda" />
     <MESSAGE value="povecanje velicine ispisa na ekran u Scene Builder-u" />
     <MESSAGE value="ispravke kako bi projekat bio prilagoden testovima" />
-    <option name="LAST_COMMIT_MESSAGE" value="ispravke kako bi projekat bio prilagoden testovima" />
+    <MESSAGE value="testovi za nevalidan unos, oduzimanje, dijeljenje i mnozenje" />
+    <option name="LAST_COMMIT_MESSAGE" value="testovi za nevalidan unos, oduzimanje, dijeljenje i mnozenje" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
