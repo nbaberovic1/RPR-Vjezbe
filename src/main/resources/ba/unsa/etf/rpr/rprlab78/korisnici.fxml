@@ -18,8 +18,8 @@
    <bottom>
       <ButtonBar BorderPane.alignment="CENTER">
         <buttons>
-          <Button mnemonicParsing="false" text="Dodaj" />
-            <Button mnemonicParsing="false" text="Kraj" />
+          <Button fx:id="btnDodaj" mnemonicParsing="false" text="Dodaj" />
+            <Button fx:id="btnKraj" mnemonicParsing="false" text="Kraj" />
         </buttons>
          <BorderPane.margin>
             <Insets top="10.0" />

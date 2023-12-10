@@ -26,6 +26,10 @@ public class KorisniciModel {
         return this.korisnici;
     }
 
+    public void addKorisnik(Korisnik korisnik) {
+        korisnici.add(korisnik);
+    }
+
     public void napuni() {
         korisnici.add(new Korisnik("Korisnik", "1", "korisnik1@live.com", "korisnik1", "kor1"));
         korisnici.add(new Korisnik("Korisnik", "2", "korisnik2@live.com", "korisnik2", "kor2"));
