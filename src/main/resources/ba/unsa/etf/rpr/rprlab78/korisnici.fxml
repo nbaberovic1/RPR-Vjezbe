@@ -6,7 +6,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="235.0" prefWidth="511.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
    <left>
-      <ListView prefHeight="125.0" prefWidth="248.0" BorderPane.alignment="CENTER">
+      <ListView fx:id="listKorisnici" prefHeight="125.0" prefWidth="248.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets />
          </BorderPane.margin>
@@ -48,11 +48,11 @@
             <Label text="E-mail:" GridPane.rowIndex="2" />
             <Label text="Korisničko ime:" GridPane.rowIndex="3" />
             <Label text="Lozinka:" GridPane.rowIndex="4" />
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="fldIme" GridPane.columnIndex="1" />
+            <TextField fx:id="fldPrezime" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="fldEmail" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="fldKorisnickoIme" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <PasswordField fx:id="fldLozinka" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
          <padding>
             <Insets left="10.0" />
