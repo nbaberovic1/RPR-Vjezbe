@@ -1,10 +1,7 @@
 package ba.unsa.etf.rpr.rprlab78;
 
-import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
@@ -77,7 +74,7 @@ public class Controller {
 
         });
 
-        btnKraj.setOnMouseClicked(e -> Platform.exit());
+        btnKraj.setOnMouseClicked(e -> System.exit(0));
     }
 
 }
