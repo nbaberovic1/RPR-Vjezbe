@@ -10,6 +10,10 @@ public class KorisniciModel {
     private ObservableList<Korisnik> korisnici = FXCollections.observableArrayList();
     private ObjectProperty<Korisnik> trenutniKorisnik = new SimpleObjectProperty<>();
 
+    public KorisniciModel() {
+        trenutniKorisnik.set(new Korisnik("", "", "", "", ""));
+    }
+
     public Korisnik getTrenutniKorisnik() {
         return this.trenutniKorisnik.get();
     }
