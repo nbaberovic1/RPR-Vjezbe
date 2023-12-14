@@ -1,5 +1,7 @@
 package ba.unsa.etf.rpr.rprlab78;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -43,6 +45,22 @@ public class Controller {
             listKorisnici.refresh();
         });
 
+        fldIme.textProperty().addListener(new ChangeListener<String>() {
+                @Override
+                public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                    listKorisnici.refresh();
+                }
+            }
+        );
+
+        fldPrezime.textProperty().addListener(new ChangeListener<String>() {
+                @Override
+                public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                    listKorisnici.refresh();
+                }
+            }
+        );
+
         model.trenutniKorisnikProperty().addListener((obs, oldKorisnik, newKorisnik) -> {
             if(oldKorisnik != null){
                 fldIme.textProperty().unbindBidirectional(oldKorisnik.imeProperty());
@@ -69,9 +87,10 @@ public class Controller {
 
         btnDodaj.setOnMouseClicked( e-> {
             Korisnik korisnik = new Korisnik("", "", "", "", "");
-           model.addKorisnik(korisnik);
-           model.setTrenutniKorisnik(korisnik);
-
+            model.addKorisnik(korisnik);
+            model.setTrenutniKorisnik(korisnik);
+            listKorisnici.getSelectionModel().select(korisnik);
+            listKorisnici.requestFocus();
         });
 
         btnKraj.setOnMouseClicked(e -> System.exit(0));
