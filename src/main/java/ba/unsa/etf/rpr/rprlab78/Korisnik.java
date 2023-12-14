@@ -64,7 +64,7 @@ public class Korisnik {
         this.email.set(email);
     }
 
-    public final String getKorisnikoIme() {
+    public final String getKorisnickoIme() {
         return this.korisnickoIme.get();
     }
 
@@ -72,7 +72,7 @@ public class Korisnik {
         return this.korisnickoIme;
     }
 
-    public void setKorisnickoIme(final String korisnickoIme){
+    public void setKorisnickoIme (final String korisnickoIme){
         this.korisnickoIme.set(korisnickoIme);
     }
 
