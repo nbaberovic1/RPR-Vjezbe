@@ -97,22 +97,22 @@ public class MainTest {
     @Test
     public void promjenaAtributaKorisnika (FxRobot robot) {
         robot.clickOn(listaKorisnika.getItems().get(0).toString());
-        robot.clickOn("#fldIme").write("Promjena");
+        robot.clickOn(fldIme).write("Promjena");
         assertEquals("KorisnikPromjena 1", listaKorisnika.getSelectionModel().getSelectedItem().toString());
-        robot.clickOn("#fldPrezime").eraseText(1).write("Prezime");
+        robot.clickOn(fldPrezime).eraseText(1).write("Prezime");
         assertEquals("KorisnikPromjena Prezime", listaKorisnika.getSelectionModel().getSelectedItem().toString());
 
-        robot.moveTo("#fldEmail").moveBy(35, 0).clickOn().eraseText(18).write("korisnikPromjena.prezime@live.com", 18);
+        robot.moveTo(fldEmail).moveBy(35, 0).clickOn().eraseText(18).write("korisnikPromjena.prezime@live.com", 18);
         assertEquals("korisnikPromjena.prezime@live.com", listaKorisnika.getSelectionModel().getSelectedItem().getEmail());
-        robot.clickOn("#fldKorisnickoIme").eraseText(9).write("KorisnikPromjenaP");
+        robot.clickOn(fldKorisnickoIme).eraseText(9).write("KorisnikPromjenaP");
         assertEquals("KorisnikPromjenaP", listaKorisnika.getSelectionModel().getSelectedItem().getKorisnickoIme());
-        robot.clickOn("#fldLozinka").eraseText(1).write("P");
+        robot.clickOn(fldLozinka).eraseText(1).write("P");
         assertEquals("korP", listaKorisnika.getSelectionModel().getSelectedItem().getLozinka());
     }
 
     @Test
     public void dodavanjeNovogKorisnika (FxRobot robot) {
-        robot.clickOn("#btnDodaj");
+        robot.clickOn(btnDodaj);
         assertEquals(3, listaKorisnika.getItems().size());
         assertEquals(2, listaKorisnika.getSelectionModel().getSelectedIndex());
         assertEquals(" ", listaKorisnika.getSelectionModel().getSelectedItem().toString());
@@ -125,19 +125,32 @@ public class MainTest {
 
     @Test
     public void unosAtributaTekDodanomKorisniku (FxRobot robot) {
-        robot.clickOn("#btnDodaj");
-        robot.clickOn("#fldIme").write("Novi");
+        robot.clickOn(btnDodaj);
+        robot.clickOn(fldIme).write("Novi");
         assertEquals("Novi ", listaKorisnika.getSelectionModel().getSelectedItem().toString());
-        robot.clickOn("#fldPrezime").write("Korisnik");
+        robot.clickOn(fldPrezime).write("Korisnik");
         assertEquals("Novi Korisnik", listaKorisnika.getSelectionModel().getSelectedItem().toString());
 
-        robot.clickOn("#fldEmail").write("novi.korisnik@live.com");
+        robot.clickOn(fldEmail).write("novi.korisnik@live.com");
         assertEquals("novi.korisnik@live.com", listaKorisnika.getSelectionModel().getSelectedItem().getEmail());
-        robot.clickOn("#fldKorisnickoIme").write("NoviK");
+        robot.clickOn(fldKorisnickoIme).write("NoviK");
         assertEquals("NoviK", listaKorisnika.getSelectionModel().getSelectedItem().getKorisnickoIme());
-        robot.clickOn("#fldLozinka").write("NoviK");
+        robot.clickOn(fldLozinka).write("NoviK");
         assertEquals("NoviK", listaKorisnika.getSelectionModel().getSelectedItem().getLozinka());
     }
 
+    @Test
+    public void snimanjePodataka (FxRobot robot) {
+        robot.clickOn(listaKorisnika.getItems().get(1).toString());
+        robot.clickOn(fldKorisnickoIme).eraseText(1).write("10");
+        robot.clickOn(btnDodaj).clickOn(btnDodaj);
+        robot.clickOn(fldIme).write("Korisnik");
+        robot.clickOn(fldLozinka).write("lozinka");
+        robot.clickOn(listaKorisnika.getItems().get(1).toString());
+        assertEquals("korisnik10", listaKorisnika.getSelectionModel().getSelectedItem().getKorisnickoIme());
+        robot.clickOn(listaKorisnika.getItems().get(3).toString());
+        assertEquals("Korisnik ", listaKorisnika.getSelectionModel().getSelectedItem().toString());
+        assertEquals("lozinka", listaKorisnika.getSelectionModel().getSelectedItem().getLozinka());
+    }
 
 }
