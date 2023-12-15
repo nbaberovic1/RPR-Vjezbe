@@ -10,6 +10,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.testfx.api.FxRobot;
@@ -42,13 +43,18 @@ public class MainTest {
         stage.toFront();
     }
 
-    @Test
-    public void pocinjeSaPraznimPoljimaZaUnos (FxRobot robot) {
+    @BeforeEach
+    private void povezi (FxRobot robot) {
+        listaKorisnika = robot.lookup("#listKorisnici").queryListView();
         fldIme = robot.lookup("#fldIme").queryAs(TextField.class);
         fldPrezime = robot.lookup("#fldPrezime").queryAs(TextField.class);
         fldEmail = robot.lookup("#fldEmail").queryAs(TextField.class);
         fldKorisnickoIme = robot.lookup("#fldKorisnickoIme").queryAs(TextField.class);
         fldLozinka = robot.lookup("#fldLozinka").queryAs(PasswordField.class);
+    }
+
+    @Test
+    public void pocinjeSaPraznimPoljimaZaUnos (FxRobot robot) {
         assertEquals("", fldIme.getText());
         assertEquals("", fldPrezime.getText());
         assertEquals("", fldEmail.getText());
@@ -58,7 +64,6 @@ public class MainTest {
 
     @Test
     public void pocinjeSaNapunjenomListom (FxRobot robot) {
-        listaKorisnika = robot.lookup("#listKorisnici").queryListView();
         ObservableList<Korisnik> korisnici = listaKorisnika.getItems();
         assertEquals(2, korisnici.size());
         assertEquals("Korisnik 1", korisnici.get(0).toString());
@@ -66,8 +71,24 @@ public class MainTest {
     }
 
     @Test
-    public void selekcijaKorisnika (FxRobot robot) {
+    public void odabirKorisnika (FxRobot robot) {
+        robot.clickOn(listaKorisnika.getItems().get(0).toString());
+        assertEquals("Korisnik", fldIme.getText());
+        assertEquals("1", fldPrezime.getText());
+        assertEquals("korisnik1@live.com", fldEmail.getText());
+        assertEquals("korisnik1", fldKorisnickoIme.getText());
+        assertEquals("kor1", fldLozinka.getText());
+    }
 
+    @Test
+    public void promjenaOdabiraKorisnika (FxRobot robot) {
+        robot.clickOn(listaKorisnika.getItems().get(0).toString());
+        robot.clickOn(listaKorisnika.getItems().get(1).toString());
+        assertEquals("Korisnik", fldIme.getText());
+        assertEquals("2", fldPrezime.getText());
+        assertEquals("korisnik2@live.com", fldEmail.getText());
+        assertEquals("korisnik2", fldKorisnickoIme.getText());
+        assertEquals("kor2", fldLozinka.getText());
     }
 
 }
