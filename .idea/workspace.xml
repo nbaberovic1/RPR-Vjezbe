@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5862238f-927f-4c4b-ae97-b6cbed049c67" name="Changes" comment="implementacija klase Grad po JavaBeans specifikaciji">
+    <list default="true" id="5862238f-927f-4c4b-ae97-b6cbed049c67" name="Changes" comment="implementacija klase Drzava po JavaBeans specifikaciji">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Drzava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Drzava.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/GeografijaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/GeografijaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/baza.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/baza.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703494866360</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="implementacija klase Drzava po JavaBeans specifikaciji">
+      <created>1703495168638</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703495168638</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -96,6 +107,7 @@
     <MESSAGE value="dodana baza" />
     <MESSAGE value="dodane DAO i DTO klase i dio implementacije GeografijaDAO" />
     <MESSAGE value="implementacija klase Grad po JavaBeans specifikaciji" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementacija klase Grad po JavaBeans specifikaciji" />
+    <MESSAGE value="implementacija klase Drzava po JavaBeans specifikaciji" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementacija klase Drzava po JavaBeans specifikaciji" />
   </component>
 </project>
