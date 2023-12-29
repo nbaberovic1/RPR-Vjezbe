@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5862238f-927f-4c4b-ae97-b6cbed049c67" name="Changes" comment="implementacija metode gradovi">
+    <list default="true" id="5862238f-927f-4c4b-ae97-b6cbed049c67" name="Changes" comment="prepravka u GeografijaDAO tako da korisiti PreparedStatement">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dump.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/GeografijaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/GeografijaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/baza.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/baza.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703752357652</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="prepravka u GeografijaDAO tako da korisiti PreparedStatement">
+      <created>1703841548425</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703841548425</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,6 +123,7 @@
     <MESSAGE value="implementacija klase Grad po JavaBeans specifikaciji" />
     <MESSAGE value="implementacija klase Drzava po JavaBeans specifikaciji" />
     <MESSAGE value="implementacija metode gradovi" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementacija metode gradovi" />
+    <MESSAGE value="prepravka u GeografijaDAO tako da korisiti PreparedStatement" />
+    <option name="LAST_COMMIT_MESSAGE" value="prepravka u GeografijaDAO tako da korisiti PreparedStatement" />
   </component>
 </project>

@@ -1,9 +1,12 @@
 package ba.unsa.etf.rpr;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Scanner;
 
 public class GeografijaDAO {
     private static GeografijaDAO instance = null;
@@ -11,9 +14,42 @@ public class GeografijaDAO {
 
     private PreparedStatement stmtSviGradovi;
 
+    private void regenerisiBazu () {
+        Scanner ulaz = null;
+        try {
+            ulaz = new Scanner(new FileInputStream("C:\\Users\\DT User3\\IdeaProjects\\lv9\\src\\main\\resources\\dump.sql"));
+            String sqlUpit = "";
+            while (ulaz.hasNext()) {
+                sqlUpit += ulaz.nextLine();
+                if (sqlUpit.length() > 1 && sqlUpit.charAt(sqlUpit.length() - 1) == ';') {
+                    try {
+                        Statement stmt = conn.createStatement();
+                        stmt.execute(sqlUpit);
+                        sqlUpit = "";
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            ulaz.close();
+        } catch ( FileNotFoundException e) {
+            System.out.println("Ne postoji SQL datoteka dump.sql nastavljam sa praznom bazom");
+        }
+
+    }
+
     private GeografijaDAO() throws SQLException {
         conn = DriverManager.getConnection("jdbc:sqlite:src/main/resources/baza.db");
-        stmtSviGradovi = conn.prepareStatement("SELECT * FROM grad g, drzava d WHERE g.drzava = d.id ORDER BY g.broj_stanovnika DESC;");
+        try {
+            stmtSviGradovi = conn.prepareStatement("SELECT * FROM grad g, drzava d WHERE g.drzava = d.id ORDER BY g.broj_stanovnika DESC;");
+        } catch ( SQLException e ) {
+            regenerisiBazu();
+            try {
+                stmtSviGradovi = conn.prepareStatement("SELECT * FROM grad g, drzava d WHERE g.drzava = d.id ORDER BY g.broj_stanovnika DESC;");
+            } catch ( SQLException e1) {
+                e1.printStackTrace();
+            }
+        }
     }
 
     public static GeografijaDAO getInstance() throws SQLException {
