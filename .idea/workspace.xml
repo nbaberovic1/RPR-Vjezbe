@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5862238f-927f-4c4b-ae97-b6cbed049c67" name="Changes" comment="implementacija metode obrisiDrzavu">
+    <list default="true" id="5862238f-927f-4c4b-ae97-b6cbed049c67" name="Changes" comment="implementacija metode dodajGrad">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/GeografijaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/GeografijaDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Main.java" afterDir="false" />
@@ -123,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703925428222</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="implementacija metode dodajGrad">
+      <created>1703966944384</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1703966944384</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,6 +154,7 @@
     <MESSAGE value="prepravka klase GeografijaDAO da kreira i popuni bazu ako baza.db ne postoji" />
     <MESSAGE value="implementacija metode glavniGrad" />
     <MESSAGE value="implementacija metode obrisiDrzavu" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementacija metode obrisiDrzavu" />
+    <MESSAGE value="implementacija metode dodajGrad" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementacija metode dodajGrad" />
   </component>
 </project>
