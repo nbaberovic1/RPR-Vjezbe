@@ -10,5 +10,7 @@ public class Main {
         for(Grad g : gradovi) {
             System.out.println(g.getNaziv());
         }
+        Grad g = geo.glavniGrad("Austrija");
+        System.out.println(System.lineSeparator() + g.getNaziv());
     }
 }

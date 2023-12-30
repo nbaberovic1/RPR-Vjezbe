@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5862238f-927f-4c4b-ae97-b6cbed049c67" name="Changes" comment="prepravka u GeografijaDAO tako da korisiti PreparedStatement">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dump.sql" afterDir="false" />
+    <list default="true" id="5862238f-927f-4c4b-ae97-b6cbed049c67" name="Changes" comment="prepravka klase GeografijaDAO da kreira i popuni bazu ako baza.db ne postoji">
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/GeografijaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/GeografijaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/baza.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/baza.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dump.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703841548425</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="prepravka klase GeografijaDAO da kreira i popuni bazu ako baza.db ne postoji">
+      <created>1703861389177</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1703861389177</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -124,6 +132,7 @@
     <MESSAGE value="implementacija klase Drzava po JavaBeans specifikaciji" />
     <MESSAGE value="implementacija metode gradovi" />
     <MESSAGE value="prepravka u GeografijaDAO tako da korisiti PreparedStatement" />
-    <option name="LAST_COMMIT_MESSAGE" value="prepravka u GeografijaDAO tako da korisiti PreparedStatement" />
+    <MESSAGE value="prepravka klase GeografijaDAO da kreira i popuni bazu ako baza.db ne postoji" />
+    <option name="LAST_COMMIT_MESSAGE" value="prepravka klase GeografijaDAO da kreira i popuni bazu ako baza.db ne postoji" />
   </component>
 </project>

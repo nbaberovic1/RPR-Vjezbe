@@ -4,8 +4,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class GeografijaDAO {
@@ -13,6 +11,7 @@ public class GeografijaDAO {
     private Connection conn;
 
     private PreparedStatement stmtSviGradovi;
+    private PreparedStatement stmtGlavniGrad;
 
     private void regenerisiBazu () {
         Scanner ulaz = null;
@@ -42,10 +41,12 @@ public class GeografijaDAO {
         conn = DriverManager.getConnection("jdbc:sqlite:src/main/resources/baza.db");
         try {
             stmtSviGradovi = conn.prepareStatement("SELECT * FROM grad g, drzava d WHERE g.drzava = d.id ORDER BY g.broj_stanovnika DESC;");
+            stmtGlavniGrad = conn.prepareStatement("SELECT * FROM  drzava d, grad g WHERE d.glavni_grad = g.id and d.naziv = ?;");
         } catch ( SQLException e ) {
             regenerisiBazu();
             try {
                 stmtSviGradovi = conn.prepareStatement("SELECT * FROM grad g, drzava d WHERE g.drzava = d.id ORDER BY g.broj_stanovnika DESC;");
+                stmtGlavniGrad = conn.prepareStatement("SELECT * FROM  drzava d, grad g WHERE d.glavni_grad = g.id and d.naziv = ?;");
             } catch ( SQLException e1) {
                 e1.printStackTrace();
             }
@@ -74,5 +75,19 @@ public class GeografijaDAO {
             }
         });*/
         return listaGradova;
+    }
+
+    public Grad glavniGrad(String drzava) {
+        Grad gGrad = null;
+        try {
+            stmtGlavniGrad.setString(1, drzava);
+            ResultSet rezultat = stmtGlavniGrad.executeQuery();
+            if(rezultat.next()) {
+                gGrad = new Grad(rezultat.getInt(4), rezultat.getString(5), rezultat.getInt(6), new Drzava(rezultat.getInt(1), rezultat.getString(2), rezultat.getInt(3)));
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return gGrad;
     }
 }
