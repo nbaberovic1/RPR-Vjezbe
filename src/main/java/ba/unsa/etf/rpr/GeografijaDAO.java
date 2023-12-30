@@ -12,6 +12,7 @@ public class GeografijaDAO {
 
     private PreparedStatement stmtSviGradovi;
     private PreparedStatement stmtGlavniGrad;
+    private PreparedStatement stmtObrisiDrzavu;
 
     private void regenerisiBazu () {
         Scanner ulaz = null;
@@ -42,11 +43,13 @@ public class GeografijaDAO {
         try {
             stmtSviGradovi = conn.prepareStatement("SELECT * FROM grad g, drzava d WHERE g.drzava = d.id ORDER BY g.broj_stanovnika DESC;");
             stmtGlavniGrad = conn.prepareStatement("SELECT * FROM  drzava d, grad g WHERE d.glavni_grad = g.id and d.naziv = ?;");
+            stmtObrisiDrzavu = conn.prepareStatement("DELETE FROM drzava WHERE naziv = ?;");
         } catch ( SQLException e ) {
             regenerisiBazu();
             try {
                 stmtSviGradovi = conn.prepareStatement("SELECT * FROM grad g, drzava d WHERE g.drzava = d.id ORDER BY g.broj_stanovnika DESC;");
                 stmtGlavniGrad = conn.prepareStatement("SELECT * FROM  drzava d, grad g WHERE d.glavni_grad = g.id and d.naziv = ?;");
+                stmtObrisiDrzavu = conn.prepareStatement("DELETE FROM drzava WHERE naziv = ?;");
             } catch ( SQLException e1) {
                 e1.printStackTrace();
             }
@@ -89,5 +92,14 @@ public class GeografijaDAO {
             e.printStackTrace();
         }
         return gGrad;
+    }
+
+    public void obrisiDrzavu(String drzava) {
+        try {
+            stmtObrisiDrzavu.setString(1, drzava);
+            stmtObrisiDrzavu.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

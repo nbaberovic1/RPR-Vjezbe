@@ -11,6 +11,15 @@ public class Main {
             System.out.println(g.getNaziv());
         }
         Grad g = geo.glavniGrad("Austrija");
+        Drzava d = g.getDrzava();
         System.out.println(System.lineSeparator() + g.getNaziv());
+        System.out.println(d.getNaziv() + System.lineSeparator());
+
+        geo.obrisiDrzavu("Velika Britanija");
+
+        gradovi = geo.gradovi();
+        for(Grad grad : gradovi) {
+            System.out.println(grad.getNaziv());
+        }
     }
 }
