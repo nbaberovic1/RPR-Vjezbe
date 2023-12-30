@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5862238f-927f-4c4b-ae97-b6cbed049c67" name="Changes" comment="implementacija metode glavniGrad">
+    <list default="true" id="5862238f-927f-4c4b-ae97-b6cbed049c67" name="Changes" comment="implementacija metode obrisiDrzavu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/GeografijaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/GeografijaDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Main.java" afterDir="false" />
@@ -116,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703922661242</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="implementacija metode obrisiDrzavu">
+      <created>1703925428222</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1703925428222</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -139,6 +146,7 @@
     <MESSAGE value="prepravka u GeografijaDAO tako da korisiti PreparedStatement" />
     <MESSAGE value="prepravka klase GeografijaDAO da kreira i popuni bazu ako baza.db ne postoji" />
     <MESSAGE value="implementacija metode glavniGrad" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementacija metode glavniGrad" />
+    <MESSAGE value="implementacija metode obrisiDrzavu" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementacija metode obrisiDrzavu" />
   </component>
 </project>
