@@ -56,10 +56,23 @@ public class Main {
         Drzava drzava = geo.nadjiDrzavu(nazivDrzave);
 
         if(nazivDrzave.equals("") || drzava != null) {
-            Grad grad = new Grad(id, naziv, brojStanovnika, geo.nadjiDrzavu(nazivDrzave));
+            Grad grad = new Grad(id, naziv, brojStanovnika, drzava);
+            geo.dodajGrad(grad);
         } else {
             System.out.println("Nema navedene drzave u bazi!");
         }
+    }
+
+    public static void dodavanjeDrzave() {
+        System.out.println("Unesi id drzave: ");
+        int id = ulaz.nextInt();
+        System.out.println("Unesi naziv drzave: ");
+        String naziv = ulaz.nextLine();
+        System.out.println("Unesi id glavnog grada drzave: ");
+        int idGlavnogGrada = ulaz.nextInt();
+
+        Drzava drzava = new Drzava(id, naziv, idGlavnogGrada);
+        geo.dodajDrzavu(drzava);
     }
 
     public static void main(String[] args) throws SQLException {
