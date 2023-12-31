@@ -2,42 +2,45 @@ package ba.unsa.etf.rpr;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
+
+    public static GeografijaDAO geo;
+
+    public static String ispisiGradove() {
+        String gradoviZaIspis = "";
+        try {
+            ArrayList<Grad> gradovi = geo.gradovi();
+            for (Grad g : gradovi) {
+                gradoviZaIspis = new StringBuilder().append(gradoviZaIspis).append(g.getNaziv()).append(" (")
+                        .append(g.getDrzava().getNaziv()).append(") - ").append(g.getBrojStanovnika()).append(System.lineSeparator()).toString();
+            }
+        } catch (SQLException e) {
+            System.out.println("Greska!");
+            return null;
+        }
+        return gradoviZaIspis;
+    }
+
+    public static void glavniGrad() {
+        Scanner ulaz = new Scanner(System.in);
+        System.out.println("Unesi naziv drzave: ");
+        String imeDrzave = ulaz.nextLine();
+        Grad grad = geo.glavniGrad(imeDrzave);
+        if(grad != null) {
+            System.out.println("Glavni grad drzave " + imeDrzave + " je " + grad.getNaziv() );
+        } else {
+            System.out.println("Nepostojeća država");
+        }
+    }
+
     public static void main(String[] args) throws SQLException {
-        GeografijaDAO geo = GeografijaDAO.getInstance();
-        ArrayList<Grad> gradovi = geo.gradovi();
-        for(Grad g : gradovi) {
-            System.out.println(g.getNaziv() + " " + g.getDrzava().getNaziv());
-        }
-        System.out.println(System.lineSeparator());
-/*
-        Grad g = geo.glavniGrad("Austrija");
-        Drzava d = g.getDrzava();
-        System.out.println(System.lineSeparator() + g.getNaziv());
-        System.out.println(d.getNaziv() + System.lineSeparator());
+        geo = GeografijaDAO.getInstance();
 
-        geo.obrisiDrzavu("Velika Britanija");*/
+        System.out.println(ispisiGradove());
 
-        //geo.dodajGrad(new Grad(7, "Hamburg", 1786448, null));
-
-        //geo.dodajGrad(new Grad(6, "Nice", 348721, new Drzava(1, "Francuska", 1)));
-
-        //geo.dodajDrzavu(new Drzava(4, "BiH", 0));
-
-        //geo.izmijeniGrad(new Grad(4, "Beč", 225883, new Drzava(3, "Austrija", 4)));
-
-        /*
-        gradovi = geo.gradovi();
-        for(Grad g1 : gradovi) {
-            System.out.println(g1.getNaziv() + " " + g1.getBrojStanovnika());
-        }
-         */
-
-        Drzava drzava = geo.nadjiDrzavu("BiH");
-
-        System.out.println(drzava.getId() + " " + drzava.getNaziv() + " " + drzava.getGlavniGrad());
-
+        glavniGrad();
     }
 
 }
