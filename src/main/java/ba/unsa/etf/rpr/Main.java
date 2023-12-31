@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr;
 
+import java.awt.dnd.DragGestureEvent;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -42,7 +43,24 @@ public class Main {
         geo.obrisiDrzavu(imeDrzave);
     }
 
+    public static void dodavanjeGrada() {
+        System.out.println("Unesi id grada: ");
+        int id = ulaz.nextInt();
+        System.out.println("Unesi naziv grada: ");
+        String naziv = ulaz.nextLine();
+        System.out.println("Unesi broj stanovnika grada: ");
+        int brojStanovnika = ulaz.nextInt();
+        System.out.println("Unesi naziv drzave u kojoj se grad nalazi: ");
+        String nazivDrzave = ulaz.nextLine();
 
+        Drzava drzava = geo.nadjiDrzavu(nazivDrzave);
+
+        if(nazivDrzave.equals("") || drzava != null) {
+            Grad grad = new Grad(id, naziv, brojStanovnika, geo.nadjiDrzavu(nazivDrzave));
+        } else {
+            System.out.println("Nema navedene drzave u bazi!");
+        }
+    }
 
     public static void main(String[] args) throws SQLException {
         geo = GeografijaDAO.getInstance();
