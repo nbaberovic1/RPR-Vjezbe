@@ -184,6 +184,20 @@ public class GeografijaDAO {
             e.printStackTrace();
         }
     }
+
+    public Drzava nadjiDrzavu(String drzava) {
+        Drzava rezultatDrzava = null;
+        try {
+            stmtDrzava.setString(1, drzava);
+            ResultSet rezultat = stmtDrzava.executeQuery();
+            if(rezultat.next()) {
+                rezultatDrzava = new Drzava(rezultat.getInt(1), rezultat.getString(2), rezultat.getInt(3));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return rezultatDrzava;
+    }
 }
 
 

@@ -25,11 +25,19 @@ public class Main {
 
         //geo.dodajDrzavu(new Drzava(4, "BiH", 0));
 
-        geo.izmijeniGrad(new Grad(4, "Beč", 225883, new Drzava(3, "Austrija", 4)));
+        //geo.izmijeniGrad(new Grad(4, "Beč", 225883, new Drzava(3, "Austrija", 4)));
 
+        /*
         gradovi = geo.gradovi();
         for(Grad g1 : gradovi) {
             System.out.println(g1.getNaziv() + " " + g1.getBrojStanovnika());
         }
+         */
+
+        Drzava drzava = geo.nadjiDrzavu("BiH");
+
+        System.out.println(drzava.getId() + " " + drzava.getNaziv() + " " + drzava.getGlavniGrad());
+
     }
+
 }
