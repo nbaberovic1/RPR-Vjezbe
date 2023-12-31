@@ -94,6 +94,25 @@ public class Main {
             System.out.println("Nema navedene drzave u bazi!");
         }
     }
+
+    public static void trazenjeDrzave() {
+        System.out.println("Unesi naziv drzave za koju zelis detaljnije podatke: ");
+        String nazivDrzave = ulaz.nextLine();
+
+        Drzava drzava = geo.nadjiDrzavu(nazivDrzave);
+
+        if(drzava != null) {
+            Grad glavniGrad = geo.glavniGrad(nazivDrzave);
+            if(glavniGrad != null) {
+                System.out.println(drzava.getId() + " " + drzava.getNaziv() + " " + drzava.getGlavniGrad() + " " + glavniGrad.getNaziv());
+            } else {
+                System.out.println(drzava.getId() + " " + drzava.getNaziv());
+            }
+        } else {
+            System.out.println("Nema trazene drzave u bazi!");
+        }
+    }
+
     public static void main(String[] args) throws SQLException {
         geo = GeografijaDAO.getInstance();
 

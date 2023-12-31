@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5862238f-927f-4c4b-ae97-b6cbed049c67" name="Changes" comment="pomocna metoda dodavanjeGrada">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="5862238f-927f-4c4b-ae97-b6cbed049c67" name="Changes" comment="pomocna metoda izmejenaGrada">
       <change beforePath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ba/unsa/etf/rpr/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,7 +169,21 @@
       <option name="project" value="LOCAL" />
       <updated>1704035499801</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="pomocna metoda dodavanjeDrzave">
+      <created>1704036829717</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1704036829717</updated>
+    </task>
+    <task id="LOCAL-00018" summary="pomocna metoda izmejenaGrada">
+      <created>1704037113721</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1704037113721</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -201,6 +214,8 @@
     <MESSAGE value="implementacija metoda ispisiGradove i glavniGrad u Main klasi" />
     <MESSAGE value="pomocna metoda brisanjeDrzave" />
     <MESSAGE value="pomocna metoda dodavanjeGrada" />
-    <option name="LAST_COMMIT_MESSAGE" value="pomocna metoda dodavanjeGrada" />
+    <MESSAGE value="pomocna metoda dodavanjeDrzave" />
+    <MESSAGE value="pomocna metoda izmejenaGrada" />
+    <option name="LAST_COMMIT_MESSAGE" value="pomocna metoda izmejenaGrada" />
   </component>
 </project>
