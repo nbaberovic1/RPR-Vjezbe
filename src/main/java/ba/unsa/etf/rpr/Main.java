@@ -27,6 +27,7 @@ public class Main {
     }
 
     public static void glavniGrad() {
+        ulaz.nextLine();
         System.out.println("Unesi naziv drzave: ");
         String imeDrzave = ulaz.nextLine();
         Grad grad = geo.glavniGrad(imeDrzave);
@@ -38,18 +39,22 @@ public class Main {
     }
 
     public static void brisanjeDrzave () {
+        ulaz.nextLine();
         System.out.println("Unesi naziv drzave: ");
         String imeDrzave = ulaz.nextLine();
         geo.obrisiDrzavu(imeDrzave);
     }
 
     public static void dodavanjeGrada() {
+        ulaz.nextLine();
         System.out.println("Unesi id grada: ");
         int id = ulaz.nextInt();
+        ulaz.nextLine();
         System.out.println("Unesi naziv grada: ");
         String naziv = ulaz.nextLine();
         System.out.println("Unesi broj stanovnika grada: ");
         int brojStanovnika = ulaz.nextInt();
+        ulaz.nextLine();
         System.out.println("Unesi naziv drzave u kojoj se grad nalazi: ");
         String nazivDrzave = ulaz.nextLine();
 
@@ -64,8 +69,10 @@ public class Main {
     }
 
     public static void dodavanjeDrzave() {
+        ulaz.nextLine();
         System.out.println("Unesi id drzave: ");
         int id = ulaz.nextInt();
+        ulaz.nextLine();
         System.out.println("Unesi naziv drzave: ");
         String naziv = ulaz.nextLine();
         System.out.println("Unesi id glavnog grada drzave: ");
@@ -76,12 +83,15 @@ public class Main {
     }
 
     public static void izmjenaGrada() {
+        ulaz.nextLine();
         System.out.println("Unesi id grada kojeg zelis promijeniti: ");
         int id = ulaz.nextInt();
+        ulaz.nextLine();
         System.out.println("Unesi novi naziv grada: ");
         String naziv = ulaz.nextLine();
         System.out.println("Unesi novi broj stanovnika grada: ");
         int brojStanovnika = ulaz.nextInt();
+        ulaz.nextLine();
         System.out.println("Unesi novi naziv drzave u kojoj se grad nalazi: ");
         String nazivDrzave = ulaz.nextLine();
 
@@ -96,6 +106,7 @@ public class Main {
     }
 
     public static void trazenjeDrzave() {
+        ulaz.nextLine();
         System.out.println("Unesi naziv drzave za koju zelis detaljnije podatke: ");
         String nazivDrzave = ulaz.nextLine();
 
@@ -115,10 +126,46 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
         geo = GeografijaDAO.getInstance();
+        while(true) {
+            System.out.println("""
+                    Odaberite jednu od ponudjenih opcija unoseci redni broj opcije: 
+                    1. Ispisivanje gradova
+                    2. Trazenje glavnog grada drzave
+                    3. Brisanje drzave
+                    4. Dodavanje grada
+                    5. Dodavanje drzave
+                    6. Izmjena grada
+                    7. Trazenje drzave
+                    """);
 
-        System.out.println(ispisiGradove());
+            int izbor = ulaz.nextInt();
 
-        glavniGrad();
+            switch (izbor) {
+                case 1:
+                    System.out.println(ispisiGradove());
+                    break;
+                case 2:
+                    glavniGrad();
+                    break;
+                case 3:
+                    brisanjeDrzave();
+                    break;
+                case 4:
+                    dodavanjeGrada();
+                    break;
+                case 5:
+                    dodavanjeDrzave();
+                    break;
+                case 6:
+                    izmjenaGrada();
+                    break;
+                case 7:
+                    trazenjeDrzave();
+                    break;
+                default:
+                    System.out.println("Izbor opcije nije validan!");
+            }
+        }
     }
 
 }
