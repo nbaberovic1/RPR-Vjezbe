@@ -41,33 +41,29 @@ public class GeografijaDAO {
         } catch ( FileNotFoundException e) {
             System.out.println("Ne postoji SQL datoteka dump.sql nastavljam sa praznom bazom");
         }
+    }
 
+    private void pripremiUpite() throws SQLException {
+        conn.createStatement().execute("PRAGMA foreign_keys = ON;");
+        stmtSviGradovi = conn.prepareStatement("SELECT * FROM grad g LEFT OUTER JOIN drzava d ON g.drzava = d.id ORDER BY g.broj_stanovnika DESC;");
+        stmtGlavniGrad = conn.prepareStatement("SELECT * FROM  drzava d, grad g WHERE d.glavni_grad = g.id and d.naziv = ?;");
+        stmtObrisiDrzavu = conn.prepareStatement("DELETE FROM drzava WHERE naziv = ?;");
+        stmtDrzava = conn.prepareStatement("SELECT * FROM drzava WHERE naziv = ?;");
+        stmtDodajGrad = conn.prepareStatement("INSERT INTO grad VALUES (?, ?, ?, ?);");
+        stmtAzurirajDrzavu = conn.prepareStatement("UPDATE drzava SET glavni_grad = ? WHERE id = ?;");
+        stmtDodajDrzavu = conn.prepareStatement("INSERT INTO drzava VALUES (?, ?, ?);");
+        stmtAzurirajGradDrzava = conn.prepareStatement("UPDATE grad SET drzava = ? WHERE id = ?;");
+        stmtAzurirajGrad = conn.prepareStatement("UPDATE grad SET naziv = ?, broj_stanovnika = ?, drzava = ? WHERE id = ?;");
     }
 
     private GeografijaDAO() throws SQLException {
         conn = DriverManager.getConnection("jdbc:sqlite:src/main/resources/baza.db");
         try {
-            stmtSviGradovi = conn.prepareStatement("SELECT * FROM grad g LEFT OUTER JOIN drzava d ON g.drzava = d.id ORDER BY g.broj_stanovnika DESC;");
-            stmtGlavniGrad = conn.prepareStatement("SELECT * FROM  drzava d, grad g WHERE d.glavni_grad = g.id and d.naziv = ?;");
-            stmtObrisiDrzavu = conn.prepareStatement("DELETE FROM drzava WHERE naziv = ?;");
-            stmtDrzava = conn.prepareStatement("SELECT * FROM drzava WHERE naziv = ?;");
-            stmtDodajGrad = conn.prepareStatement("INSERT INTO grad VALUES (?, ?, ?, ?);");
-            stmtAzurirajDrzavu = conn.prepareStatement("UPDATE drzava SET glavni_grad = ? WHERE id = ?;");
-            stmtDodajDrzavu = conn.prepareStatement("INSERT INTO drzava VALUES (?, ?, ?);");
-            stmtAzurirajGradDrzava = conn.prepareStatement("UPDATE grad SET drzava = ? WHERE id = ?;");
-            stmtAzurirajGrad = conn.prepareStatement("UPDATE grad SET naziv = ?, broj_stanovnika = ?, drzava = ? WHERE id = ?;");
+            pripremiUpite();
         } catch ( SQLException e ) {
             regenerisiBazu();
             try {
-                stmtSviGradovi = conn.prepareStatement("SELECT * FROM grad g LEFT OUTER JOIN drzava d ON g.drzava = d.id ORDER BY g.broj_stanovnika DESC;");
-                stmtGlavniGrad = conn.prepareStatement("SELECT * FROM  drzava d, grad g WHERE d.glavni_grad = g.id and d.naziv = ?;");
-                stmtObrisiDrzavu = conn.prepareStatement("DELETE FROM drzava WHERE naziv = ?;");
-                stmtDrzava = conn.prepareStatement("SELECT * FROM drzava WHERE naziv = ?;");
-                stmtDodajGrad = conn.prepareStatement("INSERT INTO grad VALUES (?, ?, ?, ?);");
-                stmtAzurirajDrzavu = conn.prepareStatement("UPDATE drzava SET glavni_grad = ? WHERE id = ?;");
-                stmtDodajDrzavu = conn.prepareStatement("INSERT INTO drzava VALUES (?, ?, ?);");
-                stmtAzurirajGradDrzava = conn.prepareStatement("UPDATE grad SET drzava = ? WHERE id = ?;");
-                stmtAzurirajGrad = conn.prepareStatement("UPDATE grad SET naziv = ?, broj_stanovnika = ?, drzava = ? WHERE id = ?;");
+                pripremiUpite();
             } catch ( SQLException e1) {
                 e1.printStackTrace();
             }

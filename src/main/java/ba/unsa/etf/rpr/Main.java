@@ -1,6 +1,5 @@
 package ba.unsa.etf.rpr;
 
-import java.awt.dnd.DragGestureEvent;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -32,9 +31,9 @@ public class Main {
         String imeDrzave = ulaz.nextLine();
         Grad grad = geo.glavniGrad(imeDrzave);
         if(grad != null) {
-            System.out.println("Glavni grad drzave " + imeDrzave + " je " + grad.getNaziv() );
+            System.out.println("Glavni grad drzave " + imeDrzave + " je " + grad.getNaziv() + System.lineSeparator());
         } else {
-            System.out.println("Nepostojeća država");
+            System.out.println("Nepostojeća država" + System.lineSeparator());
         }
     }
 
@@ -64,7 +63,7 @@ public class Main {
             Grad grad = new Grad(id, naziv, brojStanovnika, drzava);
             geo.dodajGrad(grad);
         } else {
-            System.out.println("Nema navedene drzave u bazi!");
+            System.out.println("Nema navedene drzave u bazi!" + System.lineSeparator());
         }
     }
 
@@ -101,7 +100,7 @@ public class Main {
             Grad grad = new Grad(id, naziv, brojStanovnika, drzava);
             geo.izmijeniGrad(grad);
         } else {
-            System.out.println("Nema navedene drzave u bazi!");
+            System.out.println("Nema navedene drzave u bazi!" + System.lineSeparator());
         }
     }
 
@@ -115,12 +114,12 @@ public class Main {
         if(drzava != null) {
             Grad glavniGrad = geo.glavniGrad(nazivDrzave);
             if(glavniGrad != null) {
-                System.out.println(drzava.getId() + " " + drzava.getNaziv() + " " + drzava.getGlavniGrad() + " " + glavniGrad.getNaziv());
+                System.out.println(drzava.getId() + " " + drzava.getNaziv() + " " + drzava.getGlavniGrad() + " " + glavniGrad.getNaziv() + System.lineSeparator());
             } else {
-                System.out.println(drzava.getId() + " " + drzava.getNaziv());
+                System.out.println(drzava.getId() + " " + drzava.getNaziv() + System.lineSeparator());
             }
         } else {
-            System.out.println("Nema trazene drzave u bazi!");
+            System.out.println("Nema trazene drzave u bazi!" + System.lineSeparator());
         }
     }
 
@@ -136,6 +135,7 @@ public class Main {
                     5. Dodavanje drzave
                     6. Izmjena grada
                     7. Trazenje drzave
+                    8. Izlaz
                     """);
 
             int izbor = ulaz.nextInt();
@@ -162,6 +162,8 @@ public class Main {
                 case 7:
                     trazenjeDrzave();
                     break;
+                case 8:
+                    System.exit(0);
                 default:
                     System.out.println("Izbor opcije nije validan!");
             }
