@@ -10,6 +10,7 @@ public class Main {
         for(Grad g : gradovi) {
             System.out.println(g.getNaziv() + " " + g.getDrzava().getNaziv());
         }
+        System.out.println(System.lineSeparator());
 /*
         Grad g = geo.glavniGrad("Austrija");
         Drzava d = g.getDrzava();
@@ -22,11 +23,13 @@ public class Main {
 
         //geo.dodajGrad(new Grad(6, "Nice", 348721, new Drzava(1, "Francuska", 1)));
 
-        geo.dodajDrzavu(new Drzava(4, "BiH", 0));
+        //geo.dodajDrzavu(new Drzava(4, "BiH", 0));
+
+        geo.izmijeniGrad(new Grad(4, "Beč", 225883, new Drzava(3, "Austrija", 4)));
 
         gradovi = geo.gradovi();
         for(Grad g1 : gradovi) {
-            System.out.println(g1.getNaziv());
+            System.out.println(g1.getNaziv() + " " + g1.getBrojStanovnika());
         }
     }
 }

@@ -17,6 +17,7 @@ public class GeografijaDAO {
     private PreparedStatement stmtDodajGrad;
     private PreparedStatement stmtAzurirajDrzavu;
     private PreparedStatement stmtDodajDrzavu;
+    private PreparedStatement stmtAzurirajGradDrzava;
     private PreparedStatement stmtAzurirajGrad;
 
     private void regenerisiBazu () {
@@ -53,7 +54,8 @@ public class GeografijaDAO {
             stmtDodajGrad = conn.prepareStatement("INSERT INTO grad VALUES (?, ?, ?, ?);");
             stmtAzurirajDrzavu = conn.prepareStatement("UPDATE drzava SET glavni_grad = ? WHERE id = ?;");
             stmtDodajDrzavu = conn.prepareStatement("INSERT INTO drzava VALUES (?, ?, ?);");
-            stmtAzurirajGrad = conn.prepareStatement("UPDATE grad SET drzava = ? WHERE id = ?;");
+            stmtAzurirajGradDrzava = conn.prepareStatement("UPDATE grad SET drzava = ? WHERE id = ?;");
+            stmtAzurirajGrad = conn.prepareStatement("UPDATE grad SET naziv = ?, broj_stanovnika = ?, drzava = ? WHERE id = ?;");
         } catch ( SQLException e ) {
             regenerisiBazu();
             try {
@@ -64,7 +66,8 @@ public class GeografijaDAO {
                 stmtDodajGrad = conn.prepareStatement("INSERT INTO grad VALUES (?, ?, ?, ?);");
                 stmtAzurirajDrzavu = conn.prepareStatement("UPDATE drzava SET glavni_grad = ? WHERE id = ?;");
                 stmtDodajDrzavu = conn.prepareStatement("INSERT INTO drzava VALUES (?, ?, ?);");
-                stmtAzurirajGrad = conn.prepareStatement("UPDATE grad SET drzava = ? WHERE id = ?;");
+                stmtAzurirajGradDrzava = conn.prepareStatement("UPDATE grad SET drzava = ? WHERE id = ?;");
+                stmtAzurirajGrad = conn.prepareStatement("UPDATE grad SET naziv = ?, broj_stanovnika = ?, drzava = ? WHERE id = ?;");
             } catch ( SQLException e1) {
                 e1.printStackTrace();
             }
@@ -157,10 +160,26 @@ public class GeografijaDAO {
             }
             stmtDodajDrzavu.executeUpdate();
             if(drzava.getGlavniGrad() != 0) {
-                stmtAzurirajGrad.setInt(1, drzava.getId());
-                stmtAzurirajGrad.setInt(2, drzava.getGlavniGrad());
-                stmtAzurirajGrad.executeUpdate();
+                stmtAzurirajGradDrzava.setInt(1, drzava.getId());
+                stmtAzurirajGradDrzava.setInt(2, drzava.getGlavniGrad());
+                stmtAzurirajGradDrzava.executeUpdate();
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void izmijeniGrad(Grad grad) {
+        try {
+            stmtAzurirajGrad.setString(1, grad.getNaziv());
+            stmtAzurirajGrad.setInt(2, grad.getBrojStanovnika());
+            if(grad.getDrzava() != null) {
+                stmtAzurirajGrad.setInt(3, grad.getDrzava().getId());
+            } else {
+                stmtAzurirajGrad.setNull(3, Types.INTEGER);
+            }
+            stmtAzurirajGrad.setInt(4, grad.getId());
+            stmtAzurirajGrad.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
