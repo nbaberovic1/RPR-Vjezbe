@@ -75,6 +75,25 @@ public class Main {
         geo.dodajDrzavu(drzava);
     }
 
+    public static void izmjenaGrada() {
+        System.out.println("Unesi id grada kojeg zelis promijeniti: ");
+        int id = ulaz.nextInt();
+        System.out.println("Unesi novi naziv grada: ");
+        String naziv = ulaz.nextLine();
+        System.out.println("Unesi novi broj stanovnika grada: ");
+        int brojStanovnika = ulaz.nextInt();
+        System.out.println("Unesi novi naziv drzave u kojoj se grad nalazi: ");
+        String nazivDrzave = ulaz.nextLine();
+
+        Drzava drzava = geo.nadjiDrzavu(nazivDrzave);
+
+        if(nazivDrzave.equals("") || drzava != null) {
+            Grad grad = new Grad(id, naziv, brojStanovnika, drzava);
+            geo.izmijeniGrad(grad);
+        } else {
+            System.out.println("Nema navedene drzave u bazi!");
+        }
+    }
     public static void main(String[] args) throws SQLException {
         geo = GeografijaDAO.getInstance();
 
