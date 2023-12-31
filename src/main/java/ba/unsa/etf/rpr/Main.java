@@ -8,6 +8,8 @@ public class Main {
 
     public static GeografijaDAO geo;
 
+    public static Scanner ulaz = new Scanner(System.in);
+
     public static String ispisiGradove() {
         String gradoviZaIspis = "";
         try {
@@ -24,7 +26,6 @@ public class Main {
     }
 
     public static void glavniGrad() {
-        Scanner ulaz = new Scanner(System.in);
         System.out.println("Unesi naziv drzave: ");
         String imeDrzave = ulaz.nextLine();
         Grad grad = geo.glavniGrad(imeDrzave);
@@ -34,6 +35,14 @@ public class Main {
             System.out.println("Nepostojeća država");
         }
     }
+
+    public static void brisanjeDrzave () {
+        System.out.println("Unesi naziv drzave: ");
+        String imeDrzave = ulaz.nextLine();
+        geo.obrisiDrzavu(imeDrzave);
+    }
+
+
 
     public static void main(String[] args) throws SQLException {
         geo = GeografijaDAO.getInstance();
