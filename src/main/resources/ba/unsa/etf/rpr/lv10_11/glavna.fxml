@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<HBox xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="tableViewGradovi" HBox.hgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="colGradId" minWidth="-Infinity" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colGradNaziv" minWidth="-Infinity" prefWidth="75.0" text="Naziv" />
+            <TableColumn fx:id="colGradStanovnika" minWidth="-Infinity" prefWidth="75.0" text="Stanovnika" />
+            <TableColumn fx:id="colGradDrzava" minWidth="-Infinity" prefWidth="75.0" text="Država" />
+        </columns>
+      </TableView>
+      <VBox alignment="TOP_CENTER" spacing="4.0" HBox.hgrow="ALWAYS">
+         <children>
+            <Button fx:id="btnDodajGrad" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Dodaj grad" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
+            <Button fx:id="btnDodajDrzavu" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Dodaj državu" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
+            <Button fx:id="btnIzmijeniGrad" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Izmijeni grad" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
+            <Button fx:id="btnObrisiGrad" alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Obriši grad" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
+         </children>
+         <padding>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="4.0" left="4.0" />
+   </padding>
+</HBox>
