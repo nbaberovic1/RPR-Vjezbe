@@ -1,8 +1,5 @@
 package ba.unsa.etf.rpr.lv10_11;
 
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.sql.*;
