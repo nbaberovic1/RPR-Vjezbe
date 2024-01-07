@@ -15,6 +15,8 @@ public class MainApplication extends Application {
         loader.setController(new GlavnaController());
         GlavnaController.gradovi.add(new Grad(1, "Sarajevo", 500000, new Drzava(1, "BiH", 1)));
         GlavnaController.gradovi.add(new Grad(2, "Visoko", 40000, new Drzava(1, "BiH", 1)));
+        GlavnaController.drzave.add(new Drzava(1, "BiH", 1));
+        GlavnaController.drzave.add(new Drzava(2, "Austrija", 0));
         Parent root = loader.load();
         stage.setTitle("Gradovi svijeta");
         stage.setScene(new Scene(root));
