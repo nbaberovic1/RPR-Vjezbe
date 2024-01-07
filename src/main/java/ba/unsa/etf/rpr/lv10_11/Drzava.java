@@ -15,9 +15,15 @@ public class Drzava {
     }
 
     public Drzava(SimpleIntegerProperty id, SimpleStringProperty naziv, SimpleIntegerProperty glavniGrad) {
-        this.id = id;
-        this.naziv = naziv;
-        this.glavniGrad = glavniGrad;
+        this.id = new SimpleIntegerProperty(id.get());
+        this.naziv = new SimpleStringProperty(naziv.get());
+        this.glavniGrad = new SimpleIntegerProperty(glavniGrad.get());
+    }
+
+    public Drzava(int id, String naziv, int glavniGrad) {
+        this.id = new SimpleIntegerProperty(id);
+        this.naziv = new SimpleStringProperty(naziv);
+        this.glavniGrad = new SimpleIntegerProperty(glavniGrad);
     }
 
     public final int getId() {

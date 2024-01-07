@@ -19,10 +19,17 @@ public class Grad {
     }
 
     public Grad (SimpleIntegerProperty id, SimpleStringProperty naziv, SimpleIntegerProperty brojStanovnika, ObjectProperty<Drzava> drzava) {
-        this.id = id;
-        this.naziv = naziv;
-        this.drzava = drzava;
-        this.brojStanovnika = brojStanovnika;
+        this.id = new SimpleIntegerProperty(id.get());
+        this.naziv = new SimpleStringProperty(naziv.get());
+        this.drzava = new SimpleObjectProperty<>(drzava.get());
+        this.brojStanovnika = new SimpleIntegerProperty(brojStanovnika.get());
+    }
+
+    public Grad ( int id, String naziv, int brojStanovnika, Drzava drzava) {
+        this.id = new SimpleIntegerProperty(id);
+        this.naziv = new SimpleStringProperty(naziv);
+        this.drzava = new SimpleObjectProperty<>(drzava);
+        this.brojStanovnika = new SimpleIntegerProperty(brojStanovnika);
     }
 
     public final int getId() {
