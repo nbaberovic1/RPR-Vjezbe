@@ -36,7 +36,7 @@ public class GlavnaController {
 
     private void pozoviGradFormu (boolean dodavanjeGrada) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("grad.fxml"));
-        loader.setController(new GradController(dodavanjeGrada));
+        loader.setController(new GradController(tableViewGradovi, dodavanjeGrada));
         Parent root = null;
         try {
             root = loader.load();
@@ -83,7 +83,11 @@ public class GlavnaController {
 
         btnDodajGrad.setOnMouseClicked( e-> pozoviGradFormu(true));
 
-        btnIzmijeniGrad.setOnMouseClicked( e-> pozoviGradFormu(false));
+        btnIzmijeniGrad.setOnMouseClicked( e-> {
+            if(tableViewGradovi.getSelectionModel().getSelectedItem() != null){
+                pozoviGradFormu(false);
+            }
+        });
 
         btnObrisiGrad.setOnMouseClicked( e-> {
             Grad grad = tableViewGradovi.getSelectionModel().getSelectedItem();
