@@ -79,4 +79,9 @@ public class Grad {
     public void setDrzava(final Drzava drzava) {
         this.drzava.set(drzava);
     }
+
+    @Override
+    public String toString() {
+        return this.naziv.get();
+    }
 }

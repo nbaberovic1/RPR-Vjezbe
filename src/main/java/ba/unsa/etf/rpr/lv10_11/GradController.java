@@ -1,15 +1,11 @@
 package ba.unsa.etf.rpr.lv10_11;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 import java.util.Collections;
 import java.util.Comparator;
 
