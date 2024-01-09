@@ -35,7 +35,7 @@ public class GlavnaController {
     private Button btnObrisiGrad;
 
     private void pozoviGradFormu (boolean dodavanjeGrada) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("grad.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/grad.fxml"));
         loader.setController(new GradController(tableViewGradovi, dodavanjeGrada));
         Parent root = null;
         try {
@@ -66,7 +66,7 @@ public class GlavnaController {
         kolone.get(3).setCellValueFactory(new PropertyValueFactory<>("drzava"));
 
         btnDodajDrzavu.setOnMouseClicked( e-> {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("drzava.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/drzava.fxml"));
             loader.setController(new DrzavaController());
             Parent root = null;
             try {

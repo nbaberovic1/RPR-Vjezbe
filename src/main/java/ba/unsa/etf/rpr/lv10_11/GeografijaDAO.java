@@ -23,7 +23,7 @@ public class GeografijaDAO {
     private void regenerisiBazu () {
         Scanner ulaz = null;
         try {
-            ulaz = new Scanner(new FileInputStream("C:\\Users\\DT User3\\IdeaProjects\\lv9\\src\\main\\resources\\dump.sql"));
+            ulaz = new Scanner(new FileInputStream("src/main/resources/ba/unsa/etf/rpr/lv10_11/SQL/dump.sql"));
             String sqlUpit = "";
             while (ulaz.hasNext()) {
                 sqlUpit += ulaz.nextLine();
@@ -57,7 +57,7 @@ public class GeografijaDAO {
     }
 
     private GeografijaDAO() throws SQLException {
-        conn = DriverManager.getConnection("jdbc:sqlite:src/main/resources/baza.db");
+        conn = DriverManager.getConnection("jdbc:sqlite:src/main/resources/ba/unsa/etf/rpr/lv10_11/SQL/baza.db");
         try {
             pripremiUpite();
         } catch ( SQLException e ) {
