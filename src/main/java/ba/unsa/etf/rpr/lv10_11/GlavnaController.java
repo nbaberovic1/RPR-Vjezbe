@@ -13,11 +13,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class GlavnaController {
-
-    public static ObservableList<Grad> gradovi = FXCollections.observableArrayList();
-    public static ObservableList<Drzava> drzave = FXCollections.observableArrayList();
 
     @FXML
     private TableView<Grad> tableViewGradovi;
@@ -33,6 +31,18 @@ public class GlavnaController {
 
     @FXML
     private Button btnObrisiGrad;
+
+    private GeografijaDAO geografijaDAO;
+
+    public GlavnaController() {
+        try {
+            geografijaDAO = GeografijaDAO.getInstance();
+        } catch (SQLException SQLex) {
+            SQLex.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     private void pozoviGradFormu (boolean dodavanjeGrada) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/grad.fxml"));
@@ -51,9 +61,9 @@ public class GlavnaController {
     }
 
     @FXML
-    public void initialize() {
+    public void initialize() throws SQLException {
 
-        tableViewGradovi.setItems(gradovi);
+        tableViewGradovi.setItems(geografijaDAO.getGradovi());
 
         ObservableList<TableColumn<Grad, ?>> kolone = tableViewGradovi.getColumns();
 
@@ -92,7 +102,7 @@ public class GlavnaController {
         btnObrisiGrad.setOnMouseClicked( e-> {
             Grad grad = tableViewGradovi.getSelectionModel().getSelectedItem();
             if(grad != null) {
-                gradovi.remove(grad);
+                geografijaDAO.obrisiGrad(grad);
                 tableViewGradovi.refresh();
             }
         });

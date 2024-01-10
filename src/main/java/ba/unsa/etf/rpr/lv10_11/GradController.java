@@ -6,10 +6,14 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import java.sql.SQLException;
 import java.util.Collections;
 import java.util.Comparator;
 
 public class GradController {
+
+    private GeografijaDAO geografijaDAO;
 
     @FXML
     private TextField fieldNaziv;
@@ -33,12 +37,19 @@ public class GradController {
     public GradController (TableView<Grad> tableViewGradovi, boolean ubacivanjeGrada) {
         this.tableViewGradovi = tableViewGradovi;
         this.ubacivanjeGrada = ubacivanjeGrada;
+        try {
+            geografijaDAO = GeografijaDAO.getInstance();
+        } catch (SQLException SQLex) {
+            SQLex.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
     public void initialize() {
 
-        choiceDrzava.setItems(GlavnaController.drzave);
+        choiceDrzava.setItems(geografijaDAO.getDrzave());
 
         btnOk.setOnMouseClicked( e-> {
             String naziv = fieldNaziv.getText();
@@ -65,21 +76,19 @@ public class GradController {
             if(naziv.equals("") || brojStanovnika < 0) return;
 
             if(ubacivanjeGrada) {
-                int id = Collections.max(GlavnaController.gradovi, new Comparator<Grad>() {
+                int id = Collections.max(geografijaDAO.getGradovi(), new Comparator<Grad>() {
                     @Override
                     public int compare(Grad g1, Grad g2) {
                         return Integer.compare(g1.getId(), g2.getId());
                     }
                 }).getId() + 1;
 
-                GlavnaController.gradovi.add(new Grad(id, naziv, brojStanovnika, choiceDrzava.getValue()));
+                geografijaDAO.dodajGrad(new Grad(id, naziv, brojStanovnika, choiceDrzava.getValue()));
 
             } else {
                 Grad grad = tableViewGradovi.getSelectionModel().getSelectedItem();
                 if(grad != null) {
-                    grad.setNaziv(naziv);
-                    grad.setBrojStanovnika(brojStanovnika);
-                    grad.setDrzava(choiceDrzava.getValue());
+                    geografijaDAO.izmijeniGrad(new Grad(grad.getId(), naziv, brojStanovnika, choiceDrzava.getValue()));
                     tableViewGradovi.refresh();
                 }
             }

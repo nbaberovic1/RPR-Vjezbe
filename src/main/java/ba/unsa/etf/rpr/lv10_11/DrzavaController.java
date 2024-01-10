@@ -3,14 +3,16 @@ package ba.unsa.etf.rpr.lv10_11;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.sql.SQLException;
 import java.util.Collections;
 import java.util.Comparator;
 
 public class DrzavaController {
+
+    private GeografijaDAO geografijaDAO;
 
     @FXML
     private TextField fieldNaziv;
@@ -24,10 +26,20 @@ public class DrzavaController {
     @FXML
     private Button btnCancel;
 
+    public DrzavaController() {
+        try {
+            geografijaDAO = GeografijaDAO.getInstance();
+        } catch (SQLException SQLex) {
+            SQLex.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     @FXML
     public void initialize() {
 
-        choiceGrad.setItems(GlavnaController.gradovi);
+        choiceGrad.setItems(geografijaDAO.getGradovi());
 
         btnOk.setOnMouseClicked(e -> {
             String naziv = fieldNaziv.getText();
@@ -37,7 +49,7 @@ public class DrzavaController {
                 return;
             }
 
-            int id = Collections.max(GlavnaController.drzave, new Comparator<Drzava>() {
+            int id = Collections.max(geografijaDAO.getDrzave(), new Comparator<Drzava>() {
                 @Override
                 public int compare(Drzava d1, Drzava d2) {
                     return Integer.compare(d1.getId(), d2.getId());
@@ -52,7 +64,7 @@ public class DrzavaController {
                 idGlavniGrad = glavniGrad.getId();
             }
 
-            GlavnaController.drzave.add(new Drzava(id, naziv, idGlavniGrad));
+            geografijaDAO.dodajDrzavu(new Drzava(id, naziv, idGlavniGrad));
 
             Stage gradProzor = (Stage) choiceGrad.getScene().getWindow();
             gradProzor.close();
