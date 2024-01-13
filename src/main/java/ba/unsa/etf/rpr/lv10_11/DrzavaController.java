@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import java.sql.SQLException;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.NoSuchElementException;
 
 public class DrzavaController {
 
@@ -49,12 +50,20 @@ public class DrzavaController {
                 return;
             }
 
-            int id = Collections.max(geografijaDAO.getDrzave(), new Comparator<Drzava>() {
-                @Override
-                public int compare(Drzava d1, Drzava d2) {
-                    return Integer.compare(d1.getId(), d2.getId());
-                }
-            }).getId() + 1;
+            int id;
+            try {
+                id = Collections.max(geografijaDAO.getDrzave(), new Comparator<Drzava>() {
+                    @Override
+                    public int compare(Drzava d1, Drzava d2) {
+                        return Integer.compare(d1.getId(), d2.getId());
+                    }
+                }).getId() + 1;
+            } catch (NoSuchElementException ex) {
+                id = 1;
+            } catch (Exception exception) {
+                exception.printStackTrace();
+                return;
+            }
 
             Grad glavniGrad = choiceGrad.getValue();
             int idGlavniGrad;

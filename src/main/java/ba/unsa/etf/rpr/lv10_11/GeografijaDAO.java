@@ -13,9 +13,9 @@ public class GeografijaDAO {
     private static GeografijaDAO instance = null;
     private Connection conn;
 
-    private ObservableList<Grad> gradovi;
+    private ObservableList<Grad> gradovi = FXCollections.observableArrayList();
 
-    private ObservableList<Drzava> drzave;
+    private ObservableList<Drzava> drzave = FXCollections.observableArrayList();
 
     private PreparedStatement stmtSviGradovi;
     private PreparedStatement stmtSveDrzave;
@@ -28,6 +28,47 @@ public class GeografijaDAO {
     private PreparedStatement stmtAzurirajGradDrzava;
     private PreparedStatement stmtAzurirajGrad;
     private PreparedStatement stmtObrisiGrad;
+
+
+    private void obrisiSveIzBaze() {
+        Thread nitBrisanjeGradova = new Thread( () -> {
+            ArrayList<Grad> listaGradova;
+            synchronized (conn) {
+                listaGradova = this.listGradovi();
+            }
+
+            for(Grad grad : listaGradova) {
+                synchronized (conn) {
+                    this.obrisiGrad(grad);
+                    Thread.yield();
+                }
+            }
+        });
+
+        Thread nitBrisanjeDrzava = new Thread( () -> {
+            ArrayList<Drzava> listaDrzava;
+            synchronized (conn) {
+                listaDrzava = this.listDrzave();
+            }
+
+            for(Drzava drzava : listaDrzava) {
+                synchronized (conn) {
+                    this.obrisiDrzavu(drzava.getNaziv());
+                    Thread.yield();
+                }
+            }
+        });
+
+        nitBrisanjeGradova.start();
+        nitBrisanjeDrzava.start();
+
+        try {
+            nitBrisanjeGradova.join();
+            nitBrisanjeDrzava.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
     private void regenerisiBazu () {
         Scanner ulaz = null;
@@ -76,6 +117,8 @@ public class GeografijaDAO {
         conn = DriverManager.getConnection("jdbc:sqlite:src/main/resources/ba/unsa/etf/rpr/lv10_11/SQL/baza.db");
         try {
             pripremiUpite();
+            obrisiSveIzBaze();
+            regenerisiBazu();
             ucitajIzBaze();
         } catch ( SQLException e ) {
             regenerisiBazu();
@@ -260,6 +303,7 @@ public class GeografijaDAO {
     public void obrisiGrad(Grad grad) {
         try {
             stmtObrisiGrad.setInt(1, grad.getId());
+
             if(grad.getDrzava() != null && grad.getId() == grad.getDrzava().getGlavniGrad()){
                 stmtAzurirajDrzavu.setNull(1, Types.INTEGER);
                 stmtAzurirajDrzavu.setInt(2, grad.getDrzava().getId());

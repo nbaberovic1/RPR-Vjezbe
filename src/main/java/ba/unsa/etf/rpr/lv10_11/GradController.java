@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import java.sql.SQLException;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.NoSuchElementException;
 
 public class GradController {
 
@@ -76,12 +77,20 @@ public class GradController {
             if(naziv.equals("") || brojStanovnika < 0) return;
 
             if(ubacivanjeGrada) {
-                int id = Collections.max(geografijaDAO.getGradovi(), new Comparator<Grad>() {
-                    @Override
-                    public int compare(Grad g1, Grad g2) {
-                        return Integer.compare(g1.getId(), g2.getId());
-                    }
-                }).getId() + 1;
+                int id;
+                try {
+                    id = Collections.max(geografijaDAO.getGradovi(), new Comparator<Grad>() {
+                        @Override
+                        public int compare(Grad g1, Grad g2) {
+                            return Integer.compare(g1.getId(), g2.getId());
+                        }
+                    }).getId() + 1;
+                } catch (NoSuchElementException ex) {
+                  id = 1;
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                    return;
+                }
 
                 geografijaDAO.dodajGrad(new Grad(id, naziv, brojStanovnika, choiceDrzava.getValue()));
 
