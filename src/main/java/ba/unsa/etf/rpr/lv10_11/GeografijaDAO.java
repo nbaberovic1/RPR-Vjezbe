@@ -70,7 +70,98 @@ public class GeografijaDAO {
         }
     }
 
-    private void regenerisiBazu () {
+    private void ubaciPodatkeUBazu() {
+        Thread nitUbacivanjeGradova = new Thread(() -> {
+            this.dodajGrad(new Grad(1, "Pariz", 2193031, null));
+            this.dodajGrad(new Grad(2, "London", 8538700, null));
+            this.dodajGrad(new Grad(3, "Manchester", 520000, null));
+            this.dodajGrad(new Grad(4, "Beč", 1800000, null));
+            this.dodajGrad(new Grad(5, "Graz", 280800, null));
+            this.dodajGrad(new Grad(6, "Sarajevo", 274879, null));
+        });
+
+        Thread nitUbacivanjeDrzava = new Thread(() -> {
+           this.dodajDrzavu(new Drzava(1, "Francuska", 0));
+           this.dodajDrzavu(new Drzava(2, "Velika Britanija", 0));
+           this.dodajDrzavu(new Drzava(3, "Austrija", 0));
+           this.dodajDrzavu(new Drzava(4, "BiH", 0));
+        });
+
+        nitUbacivanjeGradova.start();
+        nitUbacivanjeDrzava.start();
+
+        try {
+            nitUbacivanjeGradova.join();
+            nitUbacivanjeDrzava.join();
+        } catch (InterruptedException ie) {
+            ie.printStackTrace();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+
+        Thread nitPoveziGradove = new Thread( () -> {
+            try {
+                stmtAzurirajGradDrzava.setInt(1, 1);
+                stmtAzurirajGradDrzava.setInt(2, 1);
+                stmtAzurirajGradDrzava.executeUpdate();
+                stmtAzurirajGradDrzava.setInt(1, 2);
+                stmtAzurirajGradDrzava.setInt(2, 2);
+                stmtAzurirajGradDrzava.executeUpdate();
+                stmtAzurirajGradDrzava.setInt(1, 2);
+                stmtAzurirajGradDrzava.setInt(2, 3);
+                stmtAzurirajGradDrzava.executeUpdate();
+                stmtAzurirajGradDrzava.setInt(1, 3);
+                stmtAzurirajGradDrzava.setInt(2, 4);
+                stmtAzurirajGradDrzava.executeUpdate();
+                stmtAzurirajGradDrzava.setInt(1, 3);
+                stmtAzurirajGradDrzava.setInt(2, 5);
+                stmtAzurirajGradDrzava.executeUpdate();
+                stmtAzurirajGradDrzava.setInt(1, 4);
+                stmtAzurirajGradDrzava.setInt(2, 6);
+                stmtAzurirajGradDrzava.executeUpdate();
+            } catch (SQLException SQLe) {
+                SQLe.printStackTrace();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        Thread nitPoveziDrzave = new Thread( () -> {
+            try {
+                stmtAzurirajDrzavu.setInt(1, 1);
+                stmtAzurirajDrzavu.setInt(2, 1);
+                stmtAzurirajDrzavu.executeUpdate();
+                stmtAzurirajDrzavu.setInt(1, 2);
+                stmtAzurirajDrzavu.setInt(2, 2);
+                stmtAzurirajDrzavu.executeUpdate();
+                stmtAzurirajDrzavu.setInt(1, 4);
+                stmtAzurirajDrzavu.setInt(2, 3);
+                stmtAzurirajDrzavu.executeUpdate();
+                stmtAzurirajDrzavu.setInt(1, 6);
+                stmtAzurirajDrzavu.setInt(2, 4);
+                stmtAzurirajDrzavu.executeUpdate();
+            } catch (SQLException SQLe) {
+                SQLe.printStackTrace();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        nitPoveziGradove.start();
+        nitPoveziDrzave.start();
+
+        try {
+            nitPoveziGradove.join();
+            nitPoveziDrzave.join();
+        } catch (InterruptedException ie) {
+            ie.printStackTrace();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+
+    }
+
+   private void regenerisiBazu () {
         Scanner ulaz = null;
         try {
             ulaz = new Scanner(new FileInputStream("src/main/resources/ba/unsa/etf/rpr/lv10_11/SQL/dump.sql"));
@@ -118,12 +209,13 @@ public class GeografijaDAO {
         try {
             pripremiUpite();
             obrisiSveIzBaze();
-            regenerisiBazu();
+            ubaciPodatkeUBazu();
             ucitajIzBaze();
         } catch ( SQLException e ) {
             regenerisiBazu();
             try {
                 pripremiUpite();
+                ubaciPodatkeUBazu();
                 ucitajIzBaze();
             } catch ( SQLException e1) {
                 e1.printStackTrace();
