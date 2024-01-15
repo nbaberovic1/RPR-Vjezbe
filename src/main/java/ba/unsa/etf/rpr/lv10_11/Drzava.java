@@ -65,4 +65,10 @@ public class Drzava {
     public String toString() {
         return naziv.get();
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        Drzava d2 = (Drzava) obj;
+        return id.get() == d2.getId() && naziv.get().equals(d2.getNaziv()) && glavniGrad.get() == d2.getGlavniGrad();
+    }
 }

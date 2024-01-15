@@ -204,9 +204,9 @@ public class GeografijaDAO {
         stmtObrisiGrad = conn.prepareStatement("DELETE FROM grad WHERE id = ?;");
     }
 
-    private GeografijaDAO() throws SQLException {
-        conn = DriverManager.getConnection("jdbc:sqlite:src/main/resources/ba/unsa/etf/rpr/lv10_11/SQL/baza.db");
+    private GeografijaDAO() {
         try {
+            conn = DriverManager.getConnection("jdbc:sqlite:src/main/resources/ba/unsa/etf/rpr/lv10_11/SQL/baza.db");
             pripremiUpite();
             obrisiSveIzBaze();
             ubaciPodatkeUBazu();
@@ -223,7 +223,7 @@ public class GeografijaDAO {
         }
     }
 
-    public static GeografijaDAO getInstance() throws SQLException {
+    public static GeografijaDAO getInstance() {
         if (instance == null) instance = new GeografijaDAO();
         return instance;
     }

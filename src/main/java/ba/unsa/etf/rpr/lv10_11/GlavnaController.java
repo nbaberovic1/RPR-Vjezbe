@@ -37,8 +37,6 @@ public class GlavnaController {
     public GlavnaController() {
         try {
             geografijaDAO = GeografijaDAO.getInstance();
-        } catch (SQLException SQLex) {
-            SQLex.printStackTrace();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

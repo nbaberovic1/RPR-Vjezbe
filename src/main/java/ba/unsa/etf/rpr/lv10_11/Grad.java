@@ -84,4 +84,10 @@ public class Grad {
     public String toString() {
         return this.naziv.get();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        Grad g2 = (Grad) o;
+        return id.get() == g2.getId() && naziv.get().equals(g2.getNaziv()) && brojStanovnika.get() == g2.getBrojStanovnika() && drzava.get().equals(g2.getDrzava());
+    }
 }

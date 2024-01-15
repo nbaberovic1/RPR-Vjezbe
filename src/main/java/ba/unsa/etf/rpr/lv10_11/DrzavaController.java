@@ -30,8 +30,6 @@ public class DrzavaController {
     public DrzavaController() {
         try {
             geografijaDAO = GeografijaDAO.getInstance();
-        } catch (SQLException SQLex) {
-            SQLex.printStackTrace();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
