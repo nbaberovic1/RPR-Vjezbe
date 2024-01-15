@@ -25,4 +25,18 @@ class GeografijaDAOTest {
 
         assertEquals(ocekivanaLista, dobivenaLista);
     }
+
+    @Test
+    public void listDrzaveTest2() {
+        ArrayList<Drzava> ocekivanaLista = new ArrayList<>();
+        ocekivanaLista.add(new Drzava(1, "Francuska", 1));
+        ocekivanaLista.add(new Drzava(2, "Velika Britanija", 2));
+        ocekivanaLista.add(new Drzava(3, "Austrija", 4));
+        ocekivanaLista.add(new Drzava(4, "BiH", 6));
+
+        ArrayList<Drzava> dobivenaLista = geografijaDAO.listDrzave();
+
+        assertEquals(ocekivanaLista, dobivenaLista);
+    }
+
 }
