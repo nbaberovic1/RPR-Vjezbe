@@ -91,4 +91,21 @@ class GeografijaDAOTest {
         }
         assertEquals(new Grad(7, "Visoko", 39838, new Drzava(4, "BiH", 6)), noviGrad);
     }
+
+    @Test
+    public void dodajDrzavuTest7() {
+        geografijaDAO.dodajDrzavu(new Drzava(5, "Njemačka", 0));
+
+        ArrayList<Drzava> drzave = geografijaDAO.listDrzave();
+        assertEquals(4, drzave.size());
+
+        Drzava novaDrzava = null;
+        for(Drzava d : drzave) {
+            if(d.getId() == 5) {
+                novaDrzava = d;
+                break;
+            }
+        }
+        assertEquals(new Drzava(5, "Njemačka", 0), novaDrzava);
+    }
 }
