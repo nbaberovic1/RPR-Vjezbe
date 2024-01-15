@@ -3,13 +3,14 @@ package ba.unsa.etf.rpr.lv10_11;
 
 import org.junit.jupiter.api.Test;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class GeografijaDAOTest {
 
-    private static GeografijaDAO geografijaDAO = GeografijaDAO.getInstance();
+    private static final GeografijaDAO geografijaDAO = GeografijaDAO.getInstance();
 
     @Test
     public void listGradoviTest1() {
@@ -53,5 +54,24 @@ class GeografijaDAOTest {
         assertEquals(new Drzava(2, "Velika Britanija", 2), geografijaDAO.nadjiDrzavu("Velika Britanija"));
         assertEquals(new Drzava(3, "Austrija", 4), geografijaDAO.nadjiDrzavu("Austrija"));
         assertEquals(new Drzava(4, "BiH", 6), geografijaDAO.nadjiDrzavu("BiH"));
+    }
+
+    @Test
+    public void obrisiDrzavuTest5() throws SQLException {
+        geografijaDAO.obrisiDrzavu("Austrija");
+
+        ArrayList<Drzava> drzave = geografijaDAO.listDrzave();
+        assertEquals(3, drzave.size());
+        assertNull(geografijaDAO.nadjiDrzavu("Austrija"));
+
+        ArrayList<Grad> gradoviNakonBrisanja = geografijaDAO.listGradovi();
+        boolean obrisaniIGradovi = true;
+        for(Grad g : gradoviNakonBrisanja) {
+            if(g.getDrzava() != null && g.getDrzava().getNaziv().equals("Austrija")){
+                obrisaniIGradovi = false;
+                break;
+            }
+        }
+        assertTrue(obrisaniIGradovi);
     }
 }

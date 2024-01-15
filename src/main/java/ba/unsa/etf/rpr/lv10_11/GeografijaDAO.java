@@ -284,11 +284,17 @@ public class GeografijaDAO {
             stmtObrisiDrzavu.setString(1, drzava);
             int brojObrisanihRedova = stmtObrisiDrzavu.executeUpdate();
             if(brojObrisanihRedova > 0) {
-                for(Drzava d : drzave) {
-                    if(d.getNaziv().equals(drzava)) drzave.remove(d);
+                for(int i=0; i<drzave.size(); i++) {
+                    if(drzave.get(i).getNaziv().equals(drzava)) {
+                        drzave.remove(i);
+                        i = i - 1;
+                    }
                 }
-                for(Grad g : gradovi) {
-                    if(g.getDrzava() != null && g.getDrzava().getNaziv().equals(drzava)) gradovi.remove(g);
+                for(int i =0; i < gradovi.size(); i++) {
+                    if(gradovi.get(i).getDrzava() != null && gradovi.get(i).getDrzava().getNaziv().equals(drzava)) {
+                        gradovi.remove(i);
+                        i = i - 1;
+                    }
                 }
             }
         } catch (SQLException e) {
