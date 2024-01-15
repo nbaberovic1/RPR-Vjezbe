@@ -39,4 +39,11 @@ class GeografijaDAOTest {
         assertEquals(ocekivanaLista, dobivenaLista);
     }
 
+    @Test
+    public void glavniGradTest3() {
+        assertEquals(new Grad(2, "London", 8538700, new Drzava(2, "Velika Britanija", 2)), geografijaDAO.glavniGrad("Velika Britanija"));
+        assertEquals(new Grad(1, "Pariz", 2193031, new Drzava(1, "Francuska", 1)), geografijaDAO.glavniGrad("Francuska"));
+        assertEquals(new Grad(4, "Beč", 1800000, new Drzava(3, "Austrija", 4)), geografijaDAO.glavniGrad("Austrija"));
+        assertEquals(new Grad(6, "Sarajevo", 274879, new Drzava(4, "BiH", 6)), geografijaDAO.glavniGrad("BiH"));
+    }
 }
