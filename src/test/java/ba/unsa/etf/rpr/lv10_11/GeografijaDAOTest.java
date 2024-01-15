@@ -74,4 +74,21 @@ class GeografijaDAOTest {
         }
         assertTrue(obrisaniIGradovi);
     }
+
+    @Test
+    public void dodajGradTest6() {
+        geografijaDAO.dodajGrad(new Grad(7, "Visoko", 39838, new Drzava(4, "BiH", 6)));
+
+        ArrayList<Grad> gradovi = geografijaDAO.listGradovi();
+        assertEquals(5, gradovi.size());
+
+        Grad noviGrad = null;
+        for(Grad g : gradovi) {
+            if(g.getId() == 7) {
+                noviGrad = g;
+                break;
+            }
+        }
+        assertEquals(new Grad(7, "Visoko", 39838, new Drzava(4, "BiH", 6)), noviGrad);
+    }
 }
