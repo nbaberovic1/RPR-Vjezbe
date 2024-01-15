@@ -46,4 +46,12 @@ class GeografijaDAOTest {
         assertEquals(new Grad(4, "Beč", 1800000, new Drzava(3, "Austrija", 4)), geografijaDAO.glavniGrad("Austrija"));
         assertEquals(new Grad(6, "Sarajevo", 274879, new Drzava(4, "BiH", 6)), geografijaDAO.glavniGrad("BiH"));
     }
+
+    @Test
+    public void nadjiDrzavuTest4() {
+        assertEquals(new Drzava(1, "Francuska", 1), geografijaDAO.nadjiDrzavu("Francuska"));
+        assertEquals(new Drzava(2, "Velika Britanija", 2), geografijaDAO.nadjiDrzavu("Velika Britanija"));
+        assertEquals(new Drzava(3, "Austrija", 4), geografijaDAO.nadjiDrzavu("Austrija"));
+        assertEquals(new Drzava(4, "BiH", 6), geografijaDAO.nadjiDrzavu("BiH"));
+    }
 }
