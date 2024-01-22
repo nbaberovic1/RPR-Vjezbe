@@ -138,4 +138,22 @@ class GeografijaDAOTest {
         assertNotNull(grad);
         assertEquals(new Grad(7, "Berlin", 3600000, new Drzava(5, "Njemačka", 0)), grad);
     }
+
+    @Test
+    @Order(9)
+    public void obrisiGradTest9() {
+        geografijaDAO.obrisiGrad(new Grad(7, "Berlin", 3600000, new Drzava(5, "Njemačka", 0)));
+
+        ArrayList<Grad> gradovi = geografijaDAO.listGradovi();
+        assertEquals(4, gradovi.size());
+
+        Grad grad = null;
+        for(Grad g : gradovi) {
+            if(g.getId() == 7) {
+                grad = g;
+                break;
+            }
+        }
+        assertNull(grad);
+    }
 }
