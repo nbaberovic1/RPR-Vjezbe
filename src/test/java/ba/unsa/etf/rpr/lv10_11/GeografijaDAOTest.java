@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class GeografijaDAOTest {
 
-    private static final GeografijaDAO geografijaDAO = GeografijaDAO.getInstance();
+    private static GeografijaDAO geografijaDAO = GeografijaDAO.getInstance();
 
     @Test
     @Order(1)
@@ -155,5 +155,14 @@ class GeografijaDAOTest {
             }
         }
         assertNull(grad);
+    }
+
+    private static void vratiNaDefault() {
+        try {
+            GeografijaDAO.removeInstance();
+            geografijaDAO = GeografijaDAO.getInstance();
+        }catch (SQLException SQLe) {
+            throw new RuntimeException(SQLe);
+        }
     }
 }
