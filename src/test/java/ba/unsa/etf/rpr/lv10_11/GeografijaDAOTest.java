@@ -1,18 +1,23 @@
 package ba.unsa.etf.rpr.lv10_11;
 
 
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class GeografijaDAOTest {
 
     private static final GeografijaDAO geografijaDAO = GeografijaDAO.getInstance();
 
     @Test
+    @Order(1)
     public void listGradoviTest1() {
         ArrayList<Grad> ocekivanaLista = new ArrayList<>();
         ocekivanaLista.add(new Grad(2, "London", 8538700, new Drzava(2, "Velika Britanija", 2)));
@@ -28,6 +33,7 @@ class GeografijaDAOTest {
     }
 
     @Test
+    @Order(2)
     public void listDrzaveTest2() {
         ArrayList<Drzava> ocekivanaLista = new ArrayList<>();
         ocekivanaLista.add(new Drzava(1, "Francuska", 1));
@@ -41,6 +47,7 @@ class GeografijaDAOTest {
     }
 
     @Test
+    @Order(3)
     public void glavniGradTest3() {
         assertEquals(new Grad(2, "London", 8538700, new Drzava(2, "Velika Britanija", 2)), geografijaDAO.glavniGrad("Velika Britanija"));
         assertEquals(new Grad(1, "Pariz", 2193031, new Drzava(1, "Francuska", 1)), geografijaDAO.glavniGrad("Francuska"));
@@ -49,6 +56,7 @@ class GeografijaDAOTest {
     }
 
     @Test
+    @Order(4)
     public void nadjiDrzavuTest4() {
         assertEquals(new Drzava(1, "Francuska", 1), geografijaDAO.nadjiDrzavu("Francuska"));
         assertEquals(new Drzava(2, "Velika Britanija", 2), geografijaDAO.nadjiDrzavu("Velika Britanija"));
@@ -57,6 +65,7 @@ class GeografijaDAOTest {
     }
 
     @Test
+    @Order(5)
     public void obrisiDrzavuTest5() throws SQLException {
         geografijaDAO.obrisiDrzavu("Austrija");
 
@@ -76,6 +85,7 @@ class GeografijaDAOTest {
     }
 
     @Test
+    @Order(6)
     public void dodajGradTest6() {
         geografijaDAO.dodajGrad(new Grad(7, "Visoko", 39838, new Drzava(4, "BiH", 6)));
 
@@ -93,6 +103,7 @@ class GeografijaDAOTest {
     }
 
     @Test
+    @Order(7)
     public void dodajDrzavuTest7() {
         geografijaDAO.dodajDrzavu(new Drzava(5, "Njemačka", 0));
 
@@ -107,5 +118,24 @@ class GeografijaDAOTest {
             }
         }
         assertEquals(new Drzava(5, "Njemačka", 0), novaDrzava);
+    }
+
+    @Test
+    @Order(8)
+    public void izmijeniGradTest8() {
+        geografijaDAO.izmijeniGrad(new Grad(7, "Berlin", 3600000, new Drzava(5, "Njemačka", 0)));
+
+        ArrayList<Grad> gradovi = geografijaDAO.listGradovi();
+        assertEquals(5, gradovi.size());
+
+        Grad grad = null;
+        for(Grad g : gradovi) {
+            if(g.getId() == 7) {
+                grad = g;
+                break;
+            }
+        }
+        assertNotNull(grad);
+        assertEquals(new Grad(7, "Berlin", 3600000, new Drzava(5, "Njemačka", 0)), grad);
     }
 }
